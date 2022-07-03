@@ -1,0 +1,1132 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  3 JUL 2022 13:37
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**disertatie.tex
+(./disertatie.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-02-25>
+(c:/texlive/2019/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+(c:/texlive/2019/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(c:/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(c:/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(c:/texlive/2019/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(c:/texlive/2019/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+\Gm@cnth=\count176
+\Gm@cntv=\count177
+\c@Gm@tempcnt=\count178
+\Gm@bindingoffset=\dimen135
+\Gm@wd@mp=\dimen136
+\Gm@odd@mp=\dimen137
+\Gm@even@mp=\dimen138
+\Gm@layoutwidth=\dimen139
+\Gm@layoutheight=\dimen140
+\Gm@layouthoffset=\dimen141
+\Gm@layoutvoffset=\dimen142
+\Gm@dimlist=\toks16
+)
+(c:/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/02/28 3.41 The Babel package
+
+(c:/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/02/28 3.41 Babel switching mechanism
+)
+(c:/texlive/2019/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+
+(c:/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/02/28 3.41 Babel common definitions
+\babel@savecnt=\count179
+\U@D=\dimen143
+
+(c:/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count180
+)
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language21) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language21) on input line 108.
+)
+(c:/texlive/2019/texmf-dist/tex/generic/babel-romanian/romanian.ldf
+Language: romanian 2005/03/31 v1.2l Romanian support from the babel system
+))
+(c:/texlive/2019/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(c:/texlive/2019/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count181
+\c@Blindtext=\count182
+\c@blind@countparstart=\count183
+\blind@countxx=\count184
+\blindtext@numBlindtext=\count185
+\blind@countyy=\count186
+\c@blindlist=\count187
+\c@blindlistlevel=\count188
+\c@blindlist@level=\count189
+\blind@listitem=\count190
+\c@blind@listcount=\count191
+\c@blind@levelcount=\count192
+\blind@mathformula=\count193
+\blind@Mathformula=\count194
+\c@blind@randomcount=\count195
+\c@blind@randommax=\count196
+\c@blind@pangramcount=\count197
+\c@blind@pangrammax=\count198
+)
+(c:/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip49
+\f@nch@O@elh=\skip50
+\f@nch@O@erh=\skip51
+\f@nch@O@olh=\skip52
+\f@nch@O@orh=\skip53
+\f@nch@O@elf=\skip54
+\f@nch@O@erf=\skip55
+\f@nch@O@olf=\skip56
+\f@nch@O@orf=\skip57
+)
+(c:/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen144
+\WF@size=\dimen145
+\c@WF@wrappedlines=\count199
+\WF@box=\box45
+\WF@everypar=\toks17
+Package: wrapfig 2003/01/31  v 3.6
+)
+(c:/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(c:/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen146
+\Gin@req@width=\dimen147
+)
+(c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip58
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen148
+))
+(c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen149
+)
+(c:/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count266
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count267
+\leftroot@=\count268
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count269
+\DOTSCASE@=\count270
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box46
+\strutbox@=\box47
+\big@size=\dimen150
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count271
+\c@MaxMatrixCols=\count272
+\dotsspace@=\muskip16
+\c@parentequation=\count273
+\dspbrk@lvl=\count274
+\tag@help=\toks19
+\row@=\count275
+\column@=\count276
+\maxfields@=\count277
+\andhelp@=\toks20
+\eqnshift@=\dimen151
+\alignsep@=\dimen152
+\tagshift@=\dimen153
+\tagwidth@=\dimen154
+\totwidth@=\dimen155
+\lineht@=\dimen156
+\@envbody=\toks21
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(c:/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+(c:/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen157
+\captionmargin@=\dimen158
+\captionwidth=\dimen159
+\caption@tempdima=\dimen160
+\caption@indent=\dimen161
+\caption@parindent=\dimen162
+\caption@hangindent=\dimen163
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count278
+\c@continuedfloat=\count279
+Package caption Info: wrapfig package is loaded.
+)
+(c:/texlive/2019/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+
+(c:/texlive/2019/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+
+(c:/texlive/2019/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2019/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(c:/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@dirtytalk@qdepth=\count280
+)
+(c:/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(c:/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count281
+\lst@gtempboxa=\box48
+\lst@token=\toks23
+\lst@length=\count282
+\lst@currlwidth=\dimen164
+\lst@column=\count283
+\lst@pos=\count284
+\lst@lostspace=\dimen165
+\lst@width=\dimen166
+\lst@newlines=\count285
+\lst@lineno=\count286
+\lst@maxwidth=\dimen167
+
+(c:/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count287
+\lst@skipnumbers=\count288
+\lst@framebox=\box49
+)
+(c:/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 25.
+
+(c:/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-23 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count289
+\l__pdf_internal_box=\box50
+)
+(./disertatie.aux)
+\openout1 = `disertatie.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 569.05515pt, 14.22636pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=569.05515pt
+* \textheight=731.23584pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count290
+\scratchdimen=\dimen168
+\scratchbox=\box51
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen169
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks25
+) (c:/texlive/2019/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(c:/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count296
+<images/poza_stanga.png, id=1, 240.9pt x 285.065pt>
+File: images/poza_stanga.png Graphic file (type png)
+<use images/poza_stanga.png>
+Package pdftex.def Info: images/poza_stanga.png  used on input line 35.
+(pdftex.def)             Requested size: 113.80928pt x 134.67216pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--41
+
+ []
+
+<images/poza_dreapta.png, id=3, 220.825pt x 283.0575pt>
+File: images/poza_dreapta.png Graphic file (type png)
+<use images/poza_dreapta.png>
+Package pdftex.def Info: images/poza_dreapta.png  used on input line 49.
+(pdftex.def)             Requested size: 113.80928pt x 145.88205pt.
+[1
+
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/poza_s
+tanga.png> <./images/poza_dreapta.png>]
+
+Package geometry Warning: `a4paper': not available in `\newgeometry'; skipped.
+
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* bindingoffset: 34.14322pt
+* modes: 
+* h-part:(L,W,R)=(48.36958pt, 438.17273pt, 76.82234pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=438.17273pt
+* \textheight=731.23584pt
+* \oddsidemargin=10.24281pt
+* \evensidemargin=-23.9004pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Overfull \hbox (8.32263pt too wide) in paragraph at lines 88--89
+[]\OT1/cmr/m/n/12 Consider^and trend-ul as-cen-dent al ar-hi-tec-tu-rii orien-t
+ate spre mi-cro-ser-vi-cii si mi-gra-rea
+ []
+
+
+Overfull \hbox (13.74063pt too wide) in paragraph at lines 90--91
+[]\OT1/cmr/m/n/12 Considering the up-ward trend of microservices-oriented ar-ch
+i-tec-ture and the mi-gra-tion
+ []
+
+[1
+
+] (./disertatie.toc)
+\tf@toc=\write3
+\openout3 = `disertatie.toc'.
+
+ [2
+
+]
+Capitolul 1.
+
+LaTeX Warning: Citation `ionescu2019object' on page 3 undefined on input line 9
+9.
+
+
+Overfull \hbox (3.81851pt too wide) in paragraph at lines 99--100
+\OT1/cmr/m/n/12 ale eve-ni-men-te-lor pre-zente ^^^Pn vi-deo, care mai apoi sun
+t ^^^Pmp^^Uar[]ite ^^^Pn clase de nor-ma-li-tate.
+ []
+
+[3
+
+]
+
+LaTeX Warning: Citation `cheng2015' on page 4 undefined on input line 103.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 4 undefined on input line 1
+03.
+
+
+LaTeX Warning: Citation `sultani2018' on page 4 undefined on input line 103.
+
+
+Overfull \hbox (3.81851pt too wide) in paragraph at lines 103--103
+\OT1/cmr/m/n/12 per-soana care se plimb^^Ua ^^^Pn ring pre-zint^^Ua un com-por-
+ta-ment anor-mal, ^^^Pn timp ce lupt^^Uatorii
+ []
+
+<images/grafic_cloud_computing.png, id=24, 1003.75pt x 745.78625pt>
+File: images/grafic_cloud_computing.png Graphic file (type png)
+<use images/grafic_cloud_computing.png>
+Package pdftex.def Info: images/grafic_cloud_computing.png  used on input line 
+114.
+(pdftex.def)             Requested size: 175.2664pt x 130.21867pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--115
+\OT1/cmr/m/n/12 importan[]a do-me-ni-u-lui cloud
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 121--122
+[][]\OT1/cmr/m/n/12 Folosirea ser-ve-re-lor pro-prii pre-su-pune,
+ []
+
+
+Underfull \hbox (badness 2717) in paragraph at lines 121--122
+\OT1/cmr/m/n/12 pe l^ang^^Ua prezen[]a fi-zic^^Ua a ser-ve-re-lor ^^Xsi
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 121--122
+\OT1/cmr/m/n/12 ar fi ser-vere de baze de date, sis-teme
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 121--122
+\OT1/cmr/m/n/12 fap-tul c^^Ua sca-la-rea solu[]iilor software este
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 121--122
+\OT1/cmr/m/n/12 in-fras-truc-tura pro-prie, fac aceast^^Ua solu[]ie
+ []
+
+
+Underfull \hbox (badness 4303) in paragraph at lines 121--122
+\OT1/cmr/m/n/12 s^^Ua nu mai fie fo-lo-sit^^Ua ^^^Pn mod cu-rent
+ []
+
+[4 <./images/grafic_cloud_computing.png>]
+
+LaTeX Warning: Citation `cheng2015' on page 5 undefined on input line 126.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 5 undefined on input line 1
+26.
+
+
+LaTeX Warning: Citation `sultani2018' on page 5 undefined on input line 126.
+
+
+LaTeX Warning: Citation `smeureanu2018' on page 5 undefined on input line 126.
+
+
+LaTeX Warning: Citation `alexe2018' on page 5 undefined on input line 126.
+
+
+LaTeX Warning: Citation `hannah2004' on page 5 undefined on input line 127.
+
+
+LaTeX Warning: Citation `shet2006' on page 5 undefined on input line 127.
+
+
+LaTeX Warning: Citation `dutta2015' on page 5 undefined on input line 127.
+
+
+LaTeX Warning: Citation `zhao2011' on page 5 undefined on input line 127.
+
+
+LaTeX Warning: Citation `borislav2011' on page 5 undefined on input line 128.
+
+
+LaTeX Warning: Citation `lu2013' on page 5 undefined on input line 129.
+
+
+LaTeX Warning: Citation `smeureanu2018' on page 5 undefined on input line 129.
+
+
+LaTeX Warning: Citation `sultani2018' on page 5 undefined on input line 130.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 5 undefined on input line 1
+31.
+
+
+LaTeX Warning: Citation `sobokrou2017' on page 5 undefined on input line 131.
+
+
+LaTeX Warning: Citation `xu2015' on page 5 undefined on input line 131.
+
+
+Overfull \hbox (3.85747pt too wide) in paragraph at lines 131--132
+[]\OT1/cmr/m/n/12 Asem^^Uanator me-to-dei alese spre implementare[[]], au fost 
+pro-puse mul-ti-ple ar-hi-tec-turi
+ []
+
+[5]
+
+LaTeX Warning: Citation `2020keras' on page 6 undefined on input line 138.
+
+[6]
+Capitolul 2.
+[7
+
+]
+<images/convolution_operator.png, id=40, 269.33958pt x 201.41917pt>
+File: images/convolution_operator.png Graphic file (type png)
+<use images/convolution_operator.png>
+Package pdftex.def Info: images/convolution_operator.png  used on input line 16
+4.
+(pdftex.def)             Requested size: 175.2664pt x 131.0715pt.
+
+
+LaTeX Warning: Citation `dumoulin2016guide' on page 8 undefined on input line 1
+67.
+
+
+LaTeX Warning: Citation `dumoulin2016guide' on page 8 undefined on input line 1
+67.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
+[]|\OT1/cmr/m/n/12 Surs^^Ua: \OT1/cmr/m/it/12 A gu-ide to con-vo-lu-tion
+ []
+
+
+LaTeX Warning: Citation `goodfellow2016' on page 8 undefined on input line 171.
+
+
+
+Overfull \hbox (11.18169pt too wide) in paragraph at lines 171--172
+[][]\OT1/cmr/m/n/12 Operatorul de convolu[]ie per-mite ^^^Pntelegerea
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 171--172
+\OT1/cmr/m/n/12 da-te-lor de in-trare prin apli-ca-rea unui
+ []
+
+
+Underfull \hbox (badness 2856) in paragraph at lines 171--172
+\OT1/cmr/m/n/12 da-te-lor asu-pra c^^Uarora este apli-cat, fapt
+ []
+
+
+Underfull \hbox (badness 1817) in paragraph at lines 171--172
+\OT1/cmr/m/n/12 ilus-trat ^^^Pn fi-gura  2.1[]. Auto-en-co-de-rele
+ []
+
+
+Underfull \hbox (badness 5578) in paragraph at lines 171--172
+\OT1/cmr/m/n/12 convolu[]ionale re-pre-zint^^Ua cea mai bun^^Ua
+ []
+
+
+Overfull \hbox (0.58334pt too wide) in paragraph at lines 174--175
+\OT1/cmr/m/it/12 LLoyd \OT1/cmr/m/n/12 im-ple-men-tat ^^^Pn bi-bli-o-teca py-th
+on \OT1/cmr/m/it/12 sk-learn\OT1/cmr/m/n/12 . Aplic^and acest al-go-ritm peste 
+vec-to-rii
+ []
+
+[8 <./images/convolution_operator.PNG>]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+81.
+
+(c:/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 9 undefined on input line 1
+82.
+
+[9]
+Overfull \hbox (1.72964pt too wide) in paragraph at lines 200--202
+[]\OT1/cmr/m/n/12 Odat^^Ua ob[]inute obiec-tele din ca-drul ana-li-zat, dupa ob
+[]inerea gradien[]ilor din ca-drele
+ []
+
+[10]
+
+LaTeX Warning: Citation `flask2014' on page 11 undefined on input line 213.
+
+
+Overfull \hbox (2.29631pt too wide) in paragraph at lines 215--216
+\OT1/cmr/m/n/12 ofe-rite de Ama-zon Web Ser-vi-ces(AWS). Mai jos sunt pre-zen-t
+ate c^ateva din-tre avan-ta-jele
+ []
+
+
+LaTeX Warning: Citation `2020EC2' on page 11 undefined on input line 217.
+
+
+Overfull \hbox (1.6602pt too wide) in paragraph at lines 217--218
+\OT1/cmr/m/n/12 Aceste instan[]e sunt ex-trem de con-fi-gu-ra-bile, pun^and la 
+dispozi[]ia dezvol-ta-to-ru-lui
+ []
+
+
+LaTeX Warning: Citation `2020S3' on page 11 undefined on input line 219.
+
+
+LaTeX Warning: Citation `2020autoscaling' on page 11 undefined on input line 22
+1.
+
+
+Overfull \hbox (2.13243pt too wide) in paragraph at lines 220--222
+[]\OT1/cmr/m/n/12 Auto Sca-ling Group : acest ser-vi-ciu ofer^^Ua un mod auto-m
+at de lan-sare a instan[]elor
+ []
+
+
+LaTeX Warning: Citation `2020elb' on page 11 undefined on input line 223.
+
+[11]
+<images/client_drawing.png, id=59, 610.53094pt x 279.29344pt>
+File: images/client_drawing.png Graphic file (type png)
+<use images/client_drawing.png>
+Package pdftex.def Info: images/client_drawing.png  used on input line 228.
+(pdftex.def)             Requested size: 438.17273pt x 200.45187pt.
+
+Overfull \hbox (7.56987pt too wide) in paragraph at lines 238--239
+ \OT1/cmr/m/n/12 Pen-tru a pu-tea vi-zu-a-liza ca-pa-cit^^Ua[]ile sis-te-mu-lui
+ de detec[]ie a ano-ma-li-i-lor, am dezvol-tat
+ []
+
+[12 <./images/client_drawing.png>]
+Overfull \hbox (4.01434pt too wide) in paragraph at lines 239--240
+\OT1/cmr/m/n/12 este un fra-mework creat pen-tru a fa-ci-lita dezvol-ta-rea de 
+aplica[]ii des-k-top cross-platform,
+ []
+
+<images/interfata.png, id=64, 2258.4375pt x 1505.625pt>
+File: images/interfata.png Graphic file (type png)
+<use images/interfata.png>
+Package pdftex.def Info: images/interfata.png  used on input line 249.
+(pdftex.def)             Requested size: 438.17273pt x 292.11388pt.
+
+Overfull \hbox (12.43509pt too wide) in paragraph at lines 246--254
+\OT1/cmr/m/n/12 aplica[]ii des-k-top, se pot crea interfe[]e atrac-tive, sti-li
+-zate ^^Xsi aran-jate ast-fel ^^^Pnc^at experien[]a
+ []
+
+[13 <./images/interfata.png>] [14]
+Capitolul 3.
+
+Overfull \hbox (0.28938pt too wide) in paragraph at lines 263--264
+\OT1/cmr/m/n/12 A^^Xsa cum se poate ob-serva ^^Xsi in sec[]iunea de ana-liz^^Ua
+ a performan[]elor sistemului,detec[]ia
+ []
+
+
+LaTeX Warning: Citation `jiao2019' on page 15 undefined on input line 267.
+
+[15
+
+]
+Overfull \hbox (13.37953pt too wide) in paragraph at lines 277--278
+ \OT1/cmr/m/n/12 Din ca-uza com-ple-xit^^Ua[]ii pro-ble-mei de a iden-ti-fica c
+om-por-ta-men-tul anor-mal al obiec-te-lor
+ []
+
+<images/arhitectura_autoencoder.png, id=74, 530.98375pt x 308.15125pt>
+File: images/arhitectura_autoencoder.png Graphic file (type png)
+<use images/arhitectura_autoencoder.png>
+Package pdftex.def Info: images/arhitectura_autoencoder.png  used on input line
+ 284.
+(pdftex.def)             Requested size: 438.17273pt x 254.29373pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 16 undefined on input line 
+290.
+
+[16] [17 <./images/arhitectura_autoencoder.png>]
+
+LaTeX Warning: Citation `ionescu2019object' on page 18 undefined on input line 
+299.
+
+
+Overfull \hbox (17.36473pt too wide) in paragraph at lines 302--303
+[][]\OT1/cmr/m/n/12 In ca-drul sis-te-mu-lui, clasa \OT1/cmr/m/it/12 Auto-En-co
+-der-Mo-del \OT1/cmr/m/n/12 im-ple-men-teaz^^Ua func[]ionalit^^Ua[]ile ne-ce-sa
+re
+ []
+
+
+Overfull \hbox (23.83197pt too wide) in paragraph at lines 316--317
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (35.83209pt too wide) in paragraph at lines 321--322
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.83191pt too wide) in paragraph at lines 329--330
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[18]
+Overfull \hbox (5.83179pt too wide) in paragraph at lines 335--336
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.83191pt too wide) in paragraph at lines 341--342
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (35.83209pt too wide) in paragraph at lines 362--363
+[][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (17.83191pt too wide) in paragraph at lines 367--368
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (53.83228pt too wide) in paragraph at lines 373--374
+[][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (41.83215pt too wide) in paragraph at lines 375--377
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[19]
+
+LaTeX Warning: Citation `2020autoencoders' on page 20 undefined on input line 3
+89.
+
+<images/training_stage1_architecture.png, id=91, 1233.60875pt x 597.23125pt>
+File: images/training_stage1_architecture.png Graphic file (type png)
+<use images/training_stage1_architecture.png>
+Package pdftex.def Info: images/training_stage1_architecture.png  used on input
+ line 393.
+(pdftex.def)             Requested size: 438.17273pt x 212.13248pt.
+
+Overfull \hbox (10.31151pt too wide) in paragraph at lines 402--403
+[]\OT1/cmr/m/n/12 Dimensiunea ker-ne-lu-lui fo-lo-sit pen-tru cal-cu-la-rea gra
+dien[]ilor este foarte im-por-tant^^Ua
+ []
+
+[20 <./images/training_stage1_architecture.png>]
+
+LaTeX Warning: Citation `adam2017' on page 21 undefined on input line 404.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 21 undefined on input line 
+405.
+
+
+Overfull \hbox (13.92575pt too wide) in paragraph at lines 404--406
+\OT1/cmr/m/n/12 const^^Ua ^^^Pn diferen[]a me-die a p^^Uatratelor, dat^^Ua de f
+or-mula : $\OML/cmm/m/it/12 L\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 I; O\OT1/cmr/m/n
+/12 ) = [] [][] [][](\OML/cmm/m/it/12 I[] \OMS/cmsy/m/n/12 ^^@
+ []
+
+<images/gradients.png, id=97, 845.40843pt x 310.15875pt>
+File: images/gradients.png Graphic file (type png)
+<use images/gradients.png>
+Package pdftex.def Info: images/gradients.png  used on input line 410.
+(pdftex.def)             Requested size: 175.2664pt x 64.29758pt.
+
+Underfull \hbox (badness 1655) in paragraph at lines 416--420
+\OT1/cmr/m/n/12 se de-tec-teaz^^Ua toate obiec-tele pre-zente ^^^Pn
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 416--420
+\OT1/cmr/m/n/12 cu-rent. Se cal-cu-leaz^^Ua gradien[]ii pen-tru
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--420
+
+ []
+
+
+Overfull \hbox (29.83203pt too wide) in paragraph at lines 432--433
+[][][][][][][][][][][] 
+ []
+
+[21 <./images/gradients.png>]
+Overfull \hbox (5.83179pt too wide) in paragraph at lines 440--441
+[][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.83179pt too wide) in paragraph at lines 445--446
+[][][][][][][][][][][][][][] 
+ []
+
+<images/training_stage2_architecture.png, id=102, 1591.9475pt x 597.23125pt>
+File: images/training_stage2_architecture.png Graphic file (type png)
+<use images/training_stage2_architecture.png>
+Package pdftex.def Info: images/training_stage2_architecture.png  used on input
+ line 463.
+(pdftex.def)             Requested size: 438.16342pt x 227.62459pt.
+[22 <./images/training_stage2_architecture.png>]
+<images/inference_architecture.png, id=107, 1620.0525pt x 463.7325pt>
+File: images/inference_architecture.png Graphic file (type png)
+<use images/inference_architecture.png>
+Package pdftex.def Info: images/inference_architecture.png  used on input line 
+477.
+(pdftex.def)             Requested size: 438.16162pt x 170.71506pt.
+
+Overfull \hbox (25.68634pt too wide) in paragraph at lines 482--483
+\OT1/cmr/m/n/12 an-tre-nate ^^^Pn etapa pre-ce-dent^^Ua, dup^^Ua pre-procesarea
+ ca-dre-lor co-res-punz^^Uatoare eve-ni-men-tu-lui.
+ []
+
+[23 <./images/inference_architecture.png>]
+Overfull \hbox (27.12646pt too wide) in paragraph at lines 487--488
+[][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: Citation `RFC7231' on page 24 undefined on input line 507.
+
+
+Overfull \hbox (65.28343pt too wide) in paragraph at lines 509--524
+[][] 
+ []
+
+[24]
+Overfull \hbox (9.75873pt too wide) in paragraph at lines 527--528
+\OT1/cmr/m/n/12 mo-de-le-lor pre-antrenate la acea destina[]ie, schim-ba-rea ^^
+^Pn cod a de-nu-mi-rii ve-chii destina[]ii
+ []
+
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 5
+32.
+(c:/texlive/2019/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 532.
+ [25]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 559.
+
+Overfull \hbox (1.07271pt too wide) in paragraph at lines 570--571
+ \OT1/cmr/m/n/12 Acest sis-tem de detec[]ie a ano-ma-li-i-lor are aplica[]ii mu
+l-ti-ple ^^^Pn do-me-niul su-pra-ve-ghe-rii
+ []
+
+
+Overfull \hbox (14.32813pt too wide) in paragraph at lines 570--571
+\OT1/cmr/m/n/12 fapt ce li-mi-teaz^^Ua ca-pa-ci-ta-tea sis-te-mu-lui de a fi mo
+-ni-to-ri-zat, de-o-a-rece pen-tru su-pra-ve-ghe-rea
+ []
+
+[26] [27]
+Capitolul 4.
+
+Overfull \hbox (5.87267pt too wide) in paragraph at lines 577--578
+[]\OT1/cmr/m/n/12 De^^Xsi op[]iunile pen-tru execu[]ia ^^^Pn cloud sunt vaste, 
+de la sis-teme com-plet ad-min-si-trate
+ []
+
+
+Overfull \hbox (9.824pt too wide) in paragraph at lines 578--579
+\OT1/cmr/m/n/12 l^ang^^Ua asi-gu-ra-rea tu-tu-ror aces-tor fa-ci-lit^^Ua[]i, so
+lu[]iile cloud ofer^^Ua de multe ori si performan[]e
+ []
+
+[28
+
+]
+<images/cloudDiagram.png, id=129, 697.60625pt x 250.9375pt>
+File: images/cloudDiagram.png Graphic file (type png)
+<use images/cloudDiagram.png>
+Package pdftex.def Info: images/cloudDiagram.png  used on input line 590.
+(pdftex.def)             Requested size: 438.17273pt x 157.61665pt.
+
+Overfull \hbox (9.49762pt too wide) in paragraph at lines 603--604
+\OT1/cmr/m/n/12 ce prive^^Xste se-cu-ri-ta-tea, update-urile, sof-tu-rile ^^Xsi
+ toate leg^^Uaturile din ca-drul in-fras-truc-tu-rii,
+ []
+
+
+Overfull \hbox (3.77083pt too wide) in paragraph at lines 603--604
+\OT1/cmr/m/n/12 aces-tea sunt ad-mi-nis-trate strict de c^^Uatre cli-ent. []Int
+re a rula un sis-tem pe o in-fras-truc-tur^^Ua
+ []
+
+[29 <./images/cloudDiagram.png>]
+Overfull \hbox (4.41219pt too wide) in paragraph at lines 607--608
+[]\OT1/cmr/m/n/12 Solu[]iile \OT1/cmr/m/it/12 PaaS \OT1/cmr/m/n/12 re-pre-zint^
+^Ua un mod de a crea me-dii de dezvol-tare, tes-tare sau produc[]ie
+ []
+
+
+LaTeX Warning: Citation `jonas2019cloud' on page 30 undefined on input line 609
+.
+
+
+LaTeX Warning: Citation `christidis2019' on page 30 undefined on input line 609
+.
+
+
+LaTeX Warning: Citation `wang2019' on page 30 undefined on input line 609.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--614
+
+ []
+
+[30]
+Overfull \hbox (54.36702pt too wide) in paragraph at lines 617--629
+[][] 
+ []
+
+
+Overfull \hbox (2.25186pt too wide) in paragraph at lines 633--634
+\OT1/cmr/m/n/12 con-tinu, ce ne-ce-sit^^Ua echi-li-bra-rea tra-fi-cu-lui ^^^Pnt
+re aces-tea, lan-sa-rea de noi ser-vere, lan-sa-rea
+ []
+
+
+Overfull \hbox (13.41425pt too wide) in paragraph at lines 634--636
+\OT1/cmr/m/n/12 lu^and orice res-pon-sa-bi-li-tate de pe ume-rii clien[]ilor at
+unci c^and vine vorba de ad-min-stra-rea
+ []
+
+[31
+
+]
+Overfull \hbox (5.89464pt too wide) in paragraph at lines 644--647
+ \OT1/cmr/m/n/12 Solu[]ia aleas^^Ua pen-tru execu[]ia eta-pei de inferen[]^^Ua 
+^^^Pn cloud este \OT1/cmr/m/it/12 AWS Elas-tic Beanstalk\OT1/cmr/m/n/12 .
+ []
+
+[32] [33]
+Capitolul 5.
+
+LaTeX Warning: Citation `ionescu2019object' on page 34 undefined on input line 
+661.
+
+<images/rezultate_video_6.png, id=147, 642.4pt x 481.8pt>
+File: images/rezultate_video_6.png Graphic file (type png)
+<use images/rezultate_video_6.png>
+Package pdftex.def Info: images/rezultate_video_6.png  used on input line 665.
+(pdftex.def)             Requested size: 219.08636pt x 164.30974pt.
+
+Overfull \hbox (21.90999pt too wide) in paragraph at lines 665--666
+ [] 
+ []
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 34 undefined on input line 
+670.
+
+
+LaTeX Warning: Citation `ionescu2019object' on page 34 undefined on input line 
+671.
+
+
+Underfull \hbox (badness 3291) in paragraph at lines 671--672
+\OT1/cmr/m/n/12 sis-te-mul izo-leaz^^Ua cu suc-ces eve-ni-men-tele
+ []
+
+
+Underfull \hbox (badness 4441) in paragraph at lines 671--672
+\OT1/cmr/m/n/12 cel mai mare dez-a-van-taj al sis-te-mu-lui,
+ []
+
+
+Underfull \hbox (badness 2035) in paragraph at lines 671--672
+\OT1/cmr/m/n/12 GPU, ceea ce re-pre-zint^^Ua o ^^^Pmbun^^Uat^^Ua[]ire
+ []
+
+[34
+
+ <./images/rezultate_video_6.png>]
+<images/eroare_detectie.png, id=152, 959.83594pt x 264.23718pt>
+File: images/eroare_detectie.png Graphic file (type png)
+<use images/eroare_detectie.png>
+Package pdftex.def Info: images/eroare_detectie.png  used on input line 675.
+(pdftex.def)             Requested size: 438.17273pt x 120.62726pt.
+
+Overfull \hbox (6.0685pt too wide) in paragraph at lines 687--688
+[]\OT1/cmr/m/n/12 Rezultatele em-pi-rice ob[]inute pe acest set de date, sunt s
+a-tisf^^Uac^^Uatoare, fi-ind de-tec-tate
+ []
+
+<images/comparatie_cpu_usage.png, id=153, 910.15031pt x 344.03531pt>
+File: images/comparatie_cpu_usage.png Graphic file (type png)
+<use images/comparatie_cpu_usage.png>
+Package pdftex.def Info: images/comparatie_cpu_usage.png  used on input line 69
+2.
+(pdftex.def)             Requested size: 438.17273pt x 165.62852pt.
+[35 <./images/eroare_detectie.png>]
+Overfull \hbox (8.55284pt too wide) in paragraph at lines 697--699
+\OT1/cmr/m/n/12 uti-li-zare a sis-te-mu-lui : prin ru-lare lo-cal^^Ua, sau prin
+ ac-ce-sa-rea HTTP API-ului. Re-zul-ta-tele
+ []
+
+
+Overfull \hbox (28.9502pt too wide) in paragraph at lines 706--707
+ \OT1/cmr/m/n/12 Sis-te-mul de de-tec-tare a ano-ma-li-i-lor dezvol-tat a ^^^Pn
+deplinit as-tept^^Uarile ini[]iale, ^^^Pmbun^^Uat^^Ua[]ind
+ []
+
+[36 <./images/comparatie_cpu_usage.png>] (./disertatie.lof)
+\tf@lof=\write4
+\openout4 = `disertatie.lof'.
+
+ [37
+
+]
+(./disertatie.lot)
+\tf@lot=\write5
+\openout5 = `disertatie.lot'.
+
+
+No file disertatie.bbl.
+[38
+
+] (./disertatie.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6706 strings out of 480994
+ 98799 string characters out of 5916032
+ 395630 words of memory out of 5000000
+ 22111 multiletter control sequences out of 15000+600000
+ 541408 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,12n,45p,1433b,1576s stack positions out of 5000i,500n,10000p,200000b,80000s
+{c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2019/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-su
+per/sfrm1000.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm12
+00.pfb>
+Output written on disertatie.pdf (39 pages, 2443788 bytes).
+PDF statistics:
+ 219 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+
