@@ -6,7 +6,7 @@
 \contentsline {chapter}{\numberline {1}Introducere}{3}%
 \contentsline {section}{\numberline {1.1}Motivatie}{3}%
 \contentsline {section}{\numberline {1.2}Context}{4}%
-\contentsline {section}{\numberline {1.3}Alte abordări}{5}%
+\contentsline {section}{\numberline {1.3}Alte analize ale problemelor curente a arhitecturii Serverless}{5}%
 \contentsline {section}{\numberline {1.4}Conţinutul lucrării}{6}%
 \contentsline {chapter}{\numberline {2}Analiza arhitecturii si a tehnologiilor folosite}{7}%
 \contentsline {section}{\numberline {2.1}Etapa de antrenare}{7}%
