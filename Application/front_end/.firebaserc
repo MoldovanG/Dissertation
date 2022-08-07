@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "default": "durable-saga-front-end"
+  }
+}
