@@ -14,5 +14,14 @@
 \contentsline {section}{\numberline {2.3}DTF în Durable Functions}{11}%
 \contentsline {section}{\numberline {2.4}Greutăţi în gestionarea workflow-urilor de lunga durată - Versionarea Orchestrarilor }{12}%
 \contentsline {chapter}{\numberline {3}Workflow-uri de lungă durata - Analiză paralelă a arhitecturii}{14}%
-\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{15}%
-\contentsline {section}{\numberline {4.1}Concluzii}{15}%
+\contentsline {section}{\numberline {3.1}Descrierea problemei}{14}%
+\contentsline {section}{\numberline {3.2}Implementarea arhitecturii în mod clasic}{15}%
+\contentsline {subsection}{\numberline {3.2.1}Implementarea naivă}{15}%
+\contentsline {subsection}{\numberline {3.2.2}Execuţie durabilă}{16}%
+\contentsline {subsection}{\numberline {3.2.3}Garanţii de execuţie. Cel puţin odată versus exact o dată}{17}%
+\contentsline {subsection}{\numberline {3.2.4}Interacţiunea din exterior cu workflow-ul. Operaţii de lungă durată}{18}%
+\contentsline {subsection}{\numberline {3.2.5}Cronometre durabile.}{19}%
+\contentsline {subsection}{\numberline {3.2.6}Optimizarea numarului de request-uri}{19}%
+\contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind durable Functions}{20}%
+\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{21}%
+\contentsline {section}{\numberline {4.1}Concluzii}{21}%

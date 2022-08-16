@@ -11,6 +11,7 @@
 \usepackage{dirtytalk}
 \usepackage{url}
 \usepackage{listings}
+\usepackage{fancyvrb}
 
 \renewenvironment{abstract}[1]
   {\bigskip\selectlanguage{#1}%
@@ -229,7 +230,133 @@ Modelul de arhitectură bazat pe evenimente constă din două topologii principa
 \end{center}
 \end{figure}
 \chapter{Workflow-uri de lungă durata - Analiză paralelă a arhitecturii}
-
+\section{Descrierea problemei}
+\quad Atunci cand vine vorba de managementul unui workflow de lunga durata, sau a unei tranzactii distribuite, un exemplu clasic in literatura este cel al unei rezervări de calatorie. O rezervare de călătorie presupune mai multe lucruri : 
+\begin{itemize}
+\item Rezervarea unui taxi
+\item Rezervarea hotelului
+\item Rezervarea avionului
+\end{itemize}
+\par Într-o lume monolitică, în care totul ar fi deţinut de un singur serviciu al cărei arhitecturi s-ar fi bazat pe o baza de date relatională, garantarea rezervării cu success ar fi fost o problemă uşor de rezolvat avand în vedere caracteristica de atomicitate de unei tranzacţii. În schimb, într-o lume distribuită, în care fiecare serviciu este complet independent (Taxi Pelicanul, Hotel Capsa şi Blue Air ) sistemul de gestiune a unei rezervări trebuie să fie rezilient la toate erorile ce pot apărea la diferite niveluri ale aplicaţiei. Astfel sistemul nostru trebuie să garanteze nu numai ca rezervarea se face cu success, dar în cazul în care aceasta nu se face, toate sistemele sa fie aduse la starea iniţială, de dinaintea începerii tranzacţiei distribuite.
+\par Recuperarea dintr-un eşec într-o tranzacţie distribuită nu se poate face în mod nativ, deoarece aplicaţiile ce iau parte la aceasta sunt complet independent, astfel că fiecare sistem ce ia parte la o astfel de tranzacţie trebuie să expună si o funcţionalitate de roll-back ce va anula o operaţie ce a fost facută în aceasta. Astfel, putem concluziuna ca managementul unei tranzacţii distribuite rezulta intotdeauna în managementul unui workflow de tip SAGA. 
+\par Saga este un concept arhitectural teoretic ce garantează execuţia unui workfow într-un mod predictibil: Fie \(A_{1}, A_{2}, .... A_{n}\) acţiuni ce iau parte la o execuţie Saga si \(RA_{1}, RA_{2}, .... RA_{n}\) acţiunile de rollback corespunzător fiecărui pas care ia parte la workflow. Un workflow de tip Saga garantează fie ca toţi paşii \(A_{1}, A_{2}, .... A_{n}\) au fost executaţi cu success, fie \(A_{1}, A_{2}, .... A_{t} , RA_{1}, RA_{2}, ..... RA_{t}\)au fost executaţi cu success. Astfel, se garantează fie ca toate acţiunile au fost executate cu success, fie că toate acţiunile ce au apucat să fie executate până la un punct de eroare au fost anulate cu succes. În final, sistemul va fi mereu într-o stare consistentă. 
+\par Scopul părţii practice a acestei lucrări este implementarea unui coordonator de tranzacţii distribuite de lungă durată implementând o arhitectură Saga. Vor fi analizate atât dezvoltarea acestei aplicaţii folosind un framework care facilitează dezvoltarea orchestratoarelor, cât şi dezvoltarea aplicaţiei folosind tehnologii clasice (.net Web API  combinat cu o bază de date relaţională). 
+\section{Implementarea arhitecturii în mod clasic}
+\par În mod clasic, implementarea unui serviciu ce oferă garanţiile unei arhitecturi SAGA, trebuie să fie rezistent la următoarele potenţiale probleme :
+\begin{itemize}
+\item posibilitatea ca procesul sa fie inchis chiar în timpul execuţiei
+\item posibilitatea ca unul din paşi să eşueze din motive neimputabile sistemelor ce iau parte la acţiune (probleme de reţea)
+\end{itemize}
+\subsection{Implementarea naivă}
+Vom porni de la următoarea secţiune de cod : 
+\begin{Verbatim}[numbers=left]
+var step = ''Started'';
+try {
+	await sagaService.bookHotel(booking);
+	step = ''BookedHotel'';
+	await sagaService.bookTaxi(booking);
+	step = ''BookedTaxi'';
+	await sagaService.bookFlight(booking);
+	step = ''BookedFlight'';
+} catch (Exception){
+	if (step ==  ''BookedHotel''){
+		await sagaService.cancelHotel(booking);
+	} else if (step ==  ''BookedTaxi''){
+		await sagaService.cancelHotel(booking);
+		await sagaService.cancelTaxi(booking);
+	}
+}
+\end{Verbatim}
+Într-o lume ideeală această secţiune de cod ar fi o implementare corectă a unui SAGA, dar ce se poate întampla, daca analizăm cazurile la care trebuie sa fie rezilient un astfel de sistem, într-o lume distribuită ? 
+\par Ei bine, analizând prima potenţială problema, şi anume posibilitatea ca procesul ce execută Saga să fie oprit în mijlocul execuţiei putem evidenţia potenţialele probleme cu această abordare. Practic, daca serverul este oprit oriunde între linia 4 si 14, va lăsă execuţia într-o stare inconsistentă, cu posibilitatea de a avea consecinţe seriose asupra utilizatorului. Ce se intamplă daca se execută doar rezervarea de Hotel, dar utilizatorul nu este notificat ? Acestuia ii va fi retrasă suma de pe card în mod abusiv, rezultand în posibile probleme legale pentru deţinătorul aplicaţiei. Astfel, garanţia atomiticăţii într-o tranzacţie distribuită este foarte importantă. 
+\par Motivele pentru care această întrerupere a execuţiei practic face imposibilă garantarea atomicităţii întregii operaţii, este că toată acţiunea se execută ca parte a unei singure incercări, şi orice întrerupere a acestuia face ca operaţia să nu poată fi reîncercată şi eventual continuată, pentru a garanta execuţia completa a strategiei Saga. 
+\subsection{Execuţie durabilă}
+\par O alta problemă cu codul iniţial, este ca nu acoperă nici posibilitatea ca unul din paşi să eşueze din motive de probleme de reţea, iar astfel, toată operaţiunea poate ramane într-o stare necunoscută, daca pe perioada roll-back-ului deci între 10 si 14, unul din paşi eşuează. Pentru a acoperi ambele probleme, codul ar trebui să fie transformat dupa cum urmează : 
+\begin{Verbatim}[numbers=left]
+var booking = await sagaService.RegisterIfNotPresent(booking); // returneaza starea 
+// inregistrata in baza de date a rezervării sau inregistreaza rezervarea 
+// în baza de date, daca este prima execuţie.
+try {
+	if (!booking.isHotelBooked){
+		await sagaService.bookHotel(booking);
+		await sagaService.saveState(booking);
+		}
+	if (!booking.isTaxiBooked){
+		await sagaService.bookTaxi(booking);
+		await sagaService.saveState(booking);
+	}
+	if (!booking.isFlightBooked){
+		await sagaService.bookFlight(booking);
+		await sagaService.saveState(booking);
+	}
+} catch (Exception){
+	try{
+		if (booking.isHotelBooked){
+			await sagaService.cancelHotel();
+			await sagaService.saveState(booking);
+		} else if (booking.isTaxiBooked){
+			await sagaService.cancelHotel();
+			await sagaService.cancelTaxi();
+			await sagaService.saveState(booking);
+		}
+	}
+	catch (Exception){
+		await sagaService.markAsFailed(booking);
+	}
+}
+\end{Verbatim}
+Odată cu modificarea secvenţei de cod, putem observa următoarele modificări :
+\begin{itemize}
+\item Introducerea unui nivel de decuplare, la nivelul bazei de date, ca permite re-execuţia secvenţei de cod fără a pierde starea precedentă, pentru a evita trimiterea mai multor request-uri prin reţea decât este necesar. 
+\item Introducerea unui nou nivel de tratare a excepţiilor, care prinde eventualele probleme de reţea la nivelul acţiunii de rollback, şi care marchează rezervarea ca eşuată, pentru a fi putea fi reparată în mod manual. (atunci când execuţia Saga nu poate fi executată pe flow-ul de rollback, acţiunea trebuie). Astfel eventualele acţiuni care nu pot fi executate respectând garanţiile Saga, vor fi marcate ca mai apoi acele tranzacţii să fie reparate prin operaţiuni manuale. 
+\end{itemize} 
+Utilizând această noua strategie, codul nu va mai fi executat ca parte dintr-un singur context, ci aplicaţia va încerca să consume toate rezervările ce nu sunt într-o stare finală, pana când acestea fie sunt executate şi au ajuns într-o stare finală corectă, fie sunt marcate ca eşuate şi necesită o recuperare manuală.
+\par Pentru ca acest lucru să fie posibil, trebuie implementat un mecanism specializat care să ruleze la intervale predefinite, şi să încerce să consume rezervările ce aşteaptă să fie procesate. Această decuplare ajută din punct de vedere al rezilienţei sistemului, dar vine cu un cost suplimentar de dezvoltare deoarece această tehnică nu standard în arhitectura unui Web API.  
+\subsection{Garanţii de execuţie. Cel puţin odată versus exact o dată}
+\par Deşi o parte din probleme au fost rezolvate, încă rămân în picioare anumite vulnerabilităţi cum ar fi că sistemul înca poate suferi de pe urma unei intreruperi spontane între momentul în care se execută o acţiune, şi momentul în care aceasta este salvată în baza de date. Din cauza acestui lucru, sistemul obţinut oferă doar garanţia ca toate sistemele ce iau parte la un workflow, vor fi apelate cel putin odata, dar nu exact odata. Problema garantiei de executie exact o data în cadrul unui sistem distribuit este intens dezbătută şi în multe cazuri, imposibil de obţinut. Atât timp cât endpoint-urile sistemelor care iau parte la workflow sunt idempotente, garanţia ca aceste endpoint-uri vor fi apelate cel puţin odată este suficientă.
+\par În varianta finală a acestei implementări componentele implicate sunt : 
+\begin{itemize}
+\item Serviciul ce execută maşina de stări a workflow-ului (partea de cod discutată mai sus)
+\item Serviciul ce se ocupă de preluarea rezervărilor din baza de date si pornirea serviciului de mai sus.
+\item Baza de date, ce se ocupă de persistarea stărilor pentru a permite o execuţie durabilă
+\end{itemize}
+\subsection{Interacţiunea din exterior cu workflow-ul. Operaţii de lungă durată}
+\par Până acum, implementarea a analizat doar problemele de durabilitate a workflow-ului pe cazul rapid, atunci cand toate sistemele pot răspunde în mod sincron la apelurile trimise de sistemul ce implementează Saga. Ce se intamplă insă daca unul din sisteme poate oferi un răspuns foarte lent, spre exemplu in 24 de ore ? Implementarea curentă nu permite interacţiuni cu workflow-ul din exterior, deci toata arhitectura trebuie modificată pentru a cuprinde si acest caz. 
+\par Pentru a permite interacţiunea cu workflow-ul din exterior, sistemul va expune şi endpointuri externe pentru a modifică starea unei rezervări. Astfel, sistemul ce implementează Saga doar va anunţa sistemul hotelier cererea de rezervare a camerei iar sistemul hotelier va veni cu un apel către sistemul central odată ce finalizează rezervarea (posibil peste o perioadă lungă de timp) şi va modifica în mod direct starea rezervării. La nivelul serviciului ce implementează maşina de stări, acesta va suferi o modificare în sensul că, dacă la un moment dat nu se află într-o stare ce permite continuarea ( de exemplu după trimirea request-ului de rezervare a camerei, camera nu este rezervată) acesta va termina execuţia (return) şi va aşteaptă următoarea procesare (care va fi iniţiată de Serviciul ce se ocupă de preluarea rezervărilor din baza de date) pentru a verifica din nou starea si pentru a trece eventual la etapa următoare. 
+\par Serviciile ce interacţionează cu rezervarea vor putea modifica starea acesteia accesând endpoint-urile dedicate fiecărei operaţii, folosind id-ul rezervării primit pe request. De exemplu, daca sistemul de rezervare a zborurilor expune un endpoint de rezervarea de zbor POST \slash api\slash flights , în sistemul central, va exista un endpoint pereche POST \slash api\slash bookings\slash \{bookingId\}\slash book\_flight ce va permite tranziţia rezervării în starea FlightBooked. Astfel, workflow-ul propriu zis nu va fi executat pe perioada în care se aşteaptă finalizarea unei acţiuni din partea unui alt sistem. 
+\subsection{Cronometre durabile.}
+\par Deşi sistemul în această formă permite interacţiunea cu alte servicii, există o potenţială vulnerabilitate, şi anume daca un serviciu, din diverse motive, nu mai apelează endpoint-ul corespunzător pentru a trece workflow-ul în starea corectă. În acest caz, workflow-ul va rămane pentru totdeauna într-o stare itermediară. Pentru a rezolva această problemă, trebuie sa adăugam suport pentru un cronometru durabil. 
+\par Cronometrul durabil este un concept teoretic într-o arhitectură orientată pe microservicii, şi se referă la capacitatea unui cronometru de a rezista eventualelor întreruperi ale procesului. În cadrul sistemului nostru, pentru a obţine un cronometru durabil elementar, pe entitatea rezervării se va salva şi data la care a fost creat şi data la care s-a făcut ultimul update. Astfel, orice cronometru durabil se obţine prin compararea datei la care a fost creat/updatat plus un anumit delta, cu data curenta de la momentul execuţiei. Următoarea secvenţă de cod, ilustrează cum poate fi verificat în mod durabil daca workflow-ul a tranziţionat în mod corect către o stare intermediară, în timp util.
+\begin{Verbatim}[numbers=left]
+	var relativeTime = booking.CreationTime.AddMinutes(10);
+	if (!booking.isHotelBooked){
+		if (DateTime.Compare(relativeTime, DateTime.UtcNow)  < 0 ){
+			throw new TimeoutException(`Workflow-ul nu a trecut la pasul următor destul de rapid`);
+		}
+		await sagaService.bookHotel(booking);
+		await sagaService.saveState(booking);
+		}
+	}
+\end{Verbatim}
+\par Codul de mai sus garantează ca daca workflow-ul nu tranziţionează către o anumită stare (HotelBooked în acest caz) workflow-ul va porni strategia de rollback printr-o excepţie. Astfel, sistemul devine rezilient la eventuale erori ce apar în serviciile ce iau parte la workflow, şi este capabil să re-aducă workflow-ul într-o stare consistentă fără intervenţii din exterior. 
+\subsection{Optimizarea numarului de request-uri}
+ \par Deşi garanţia de cel puţin odată ne permite ca request-urile către celelate servicii sa fie trimise de mai multe ori, beneficiind de faptul că acestea sunt idempotente, sistemul nu ar trebui să abuzeze şi atât timp cât totul funcţionează corect, sistemul ar trebui sa trimită request-urile exact o dată. Însă, analizând codul de mai sus si extinzând pattern-ul şi la celelalte acţiuni, putem observa o problemă. Presupunând ca acţiunea de rezervare a unei camere de hotel durează 24 de ore, iar rezervarea noastră este preluată si procesată de către serviciul ce se ocupă de preluarea rezervărilor din baza de date o data pe minut, atunci se vor trimite 1440 de request-uri către sistemul de rezervare a camerelor de hotel, în loc de una, acest lucru fiind innacceptabil, chiar şi într-un sistem ce garantează execuţia cel puţin odată a acţiunilor. 
+ \par Pentru a rezolva această problemă vor fi introduse stări intermediare, ce vor evidenţia natura de lungă durată a operaţiunilor, şi vor ajuta sistemul de gestiune al Saga să obţine execuţia exact o dată a acţiunilor, atât timp cât nu apare nici o eroare în vreunul din sistemele implicate. 
+ \begin{Verbatim}[numbers=left]
+	var relativeTime = booking.CreationTime.AddMinutes(10);
+	if (!booking.isHotelBooked){
+		if (DateTime.Compare(relativeTime, DateTime.UtcNow)  < 0 ){
+			throw new TimeoutException(`Workflow-ul nu a trecut
+			 la pasul următor destul de rapid`);
+		}
+		if (booking.status != ''BookingHotel''){
+			await sagaService.bookHotel(booking);
+			await sagaService.saveState(booking, `BookingHotel`);
+		}
+	}
+\end{Verbatim}
+\par Salvarea stărilor de tranziţie în entitatea rezervării permite sistemului să decidă să nu mai execute o anumită acţiune pe perioada în care asteaptă un raspuns din exterior, datorită naturii de lungă durată a operaţiunilor.
+\section{Implementarea arhitecturii folosind durable Functions}
 \chapter {Rezultate şi Concluzii}
 
 \section{Concluzii}
