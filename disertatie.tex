@@ -11,6 +11,11 @@
 \usepackage{dirtytalk}
 \usepackage{url}
 \usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
 \usepackage{fancyvrb}
 
 \renewenvironment{abstract}[1]
@@ -357,6 +362,64 @@ Utilizând această noua strategie, codul nu va mai fi executat ca parte dintr-u
 \end{Verbatim}
 \par Salvarea stărilor de tranziţie în entitatea rezervării permite sistemului să decidă să nu mai execute o anumită acţiune pe perioada în care asteaptă un raspuns din exterior, datorită naturii de lungă durată a operaţiunilor.
 \section{Implementarea arhitecturii folosind durable Functions}
+\quad În capitolul anterior am putut observa dificultăţile în a implementa un serviciu care să implementeze conceptul de execuţie Saga, pentru a gestiona o tranzacţie distribuită. Pornind de la aceeaşi problemă, în acest capitol va fi analizată dezvoltarea unui serviciu care foloseşte de această data Durable Functions, pentru a analiza care sunt problemele pe care această tehnologie le rezolvă.
+\par Pentru e putea intelege mai bine arhitectura execuţiei unei Saga folosind Durable functions, vor fi analizate conceptele ce stau la baza dezvoltării unei soluţii folosind Durable functions :
+\par \textbf{Funcțiile de orchestrare} descriu modul în care sunt executate acțiunile și ordinea în care sunt executate. Funcțiile orchestrator descriu orchestrarea în cod (C\#\ sau JavaScript), așa cum se arată în modelele de aplicație Durable Functions. O orchestrație poate avea multe tipuri diferite de acțiuni, inclusiv funcții de activitate, sub-orchestrații, așteptare pentru evenimente externe, HTTP și cronometre durabile. Funcțiile de orchestrator pot interacționa și cu entităţi durabile. Funcțiile orchestrator sunt scrise folosind cod obișnuit, dar există cerințe stricte privind modul de scriere a codului. Mai exact, codul funcției de orchestrator trebuie să fie determinist. Nerespectarea acestor cerințe de determinism poate face ca funcțiile orchestratorului să nu ruleze corect. Codul funcţiei orchestrator este rulat de mai multe ori, asemănator cu modalitea în care în capitolul anterior am ales un mecanism de polling care rulează codul de orchestrare până orchestrarea ajunge într-o stare finală. Deşi implementarea propriu zisă diferă în multe zone, conceptul de bază este acelaşi iar acesta vine cu această nevoie de a scrie cod determinist, pentru a nu avea rezultate diferite pentru aceeaşi orchestrare, în funcţie de momentul în care aceasta a fost executată.
+\par \textbf{Funcțiile de activitate}  sunt unitatea de bază de lucru într-o orchestrare durabilă a funcțiilor. Funcțiile de activitate sunt funcțiile și sarcinile care sunt orchestrate în proces. De exemplu, în cazul analizat în cadrul acestei lucrări, pentru a procesa o o rezervare este necesară execuţia unor sarcini. Aceste sarcini implică comunicarea cu serviciul de taxi, cu cel hoteliar si cu cel aviatic. Fiecare dintre aceste sarcini individuale poate fi modelat ca o activitate. Aceste funcţii de activitate pot fi executate în serie, în parelel sau o combinaţie a ambelor. Spre deosebire de funcțiile de orchestrator, funcțiile de activitate nu sunt restricționate în ceea ce privește tipul de lucru pe care îl puteți face în ele. Funcțiile de activitate sunt frecvent utilizate pentru a efectua apeluri în rețea sau pentru a rula operațiuni cu consum intensiv de CPU. O funcție de activitate poate, de asemenea, să returneze date înapoi la funcția de orchestrator. Durable Task Framework garantează că fiecare funcție de activitate apelată va fi executată cel puțin o dată în timpul execuției unei orchestrații.
+\par \textbf{Funcțiile entitate} definesc operațiuni pentru citirea și actualizarea unor părți mici de stare. Adesea ne referim la aceste entități cu stare ca entități durabile. La fel ca funcțiile de orchestrator, funcțiile de entitate sunt funcții cu un tip de declanșator special, declanșator de entitate. Ele pot fi, de asemenea, invocate din funcțiile client sau din funcțiile orchestrator. Spre deosebire de funcțiile de orchestrator, funcțiile de entitate nu au constrângeri specifice de cod. Funcțiile entității gestionează, de asemenea, starea în mod explicit, mai degrabă decât să reprezinte implicit starea prin fluxul de control. Acestea nu sunt re-rulate în mod constant, în schimb, garantează accesul în mod serializat la datele interne, astfel este sigur ca aceste entităţi durabile să fie accessate din multiple activităti sau orchestrări în mod concurent, fără a ne ingrijora legat de integritatea datelor. 
+\par \textbf{Cronometrele Durabile} din Durable Functions implementează acelaşi concept descris şi în capitolul anterior, şi oferă o abstractizare peste implementarea standard, pentru o utilizare rapidă. 
+\par \textbf{Evenimentele Externe} deasemenea implementează un concept similar cu problema interacţiunii cu procesele in curs descris anterior, şi facilitează comunicarea din exterior către o orchestrare care înca rulează. Combinaţie dintre suportul pentru evenimente externe si cronometre durabile rezulta într-un suport foarte complex, care acoperă multe situaţii de reale, care necesită comunicări asincrone între serviciul de orchestrare si celelalte servicii terte care iau parte la acţiune. 
+\subsection{Noua Arhitectură}
+\par Folosind conceptele tocmai definite, vom mapa problemele ce trebuie rezolvate pentru a implementa serviciul de gestiune a rezervărilor către soluţiile puse la dispoziţie de Durable Functions. 
+ \begin{figure}[h]
+\begin{center}
+        \includegraphics[width=1\textwidth]{images/durable_functions_arhitecture}
+			 \caption{Rezervare distribuită folosind Durable Functions}
+			 \label{fig:durable-functions-booking-arhitecture}
+\end{center}
+\end{figure}
+ \par Analizând ~\ref{fig:durable-functions-booking-arhitecture} putem observa urmatoarea corespondentă între conceptele de bază expuse de Durable Functions, si necesităţile noastre : 
+ \begin{itemize}
+ \item Nucleul serviciului nostru de gestiune al operaţiei de rezervare este plasat într-o funcţie de orchestrare, ce garantează execuţia durabilă a logicii, astfel încât Saga sa fie executată cu success indiferent de eventualele întreruperi mecanice sau excepţii ne-aşteptate în timpul execuţiei.
+ \item Fiecare interacţiune cu serviciile externe este izolată într-o funcţie de activitate, pentru a permite execuţia lor conform unor politici de retry şi pentru a izola comportamentul ne-determinist (apeluri asyncrone prin reţea) de logica principală de orchestrare.
+ \item Starea generală a rezervării este stocată prin intermediul unei funcţii entitate ce asigură capacitatea de a citi şi updata starea rezervării în mod distribuit, pe măsura ce serviciile externe procesează request-urile trimise de către serviciul principal.
+ \end{itemize}
+ \par Analizând strict codul de orchestrare putem observa că acesta nu este cu mult mai complex, doarece conceptele de durabilitate sunt abstractizate sub interfeţe uşor de folosit. 
+\begin{lstlisting}[numbers=left]
+var entityGuid = context.GetInput<string>();
+var entityId = new EntityId(nameof(Booking), entityGuid);
+var booking = await context.CallEntityAsync<Booking>(entityId, "Get");
+var isHotelBooked= await context.CallActivityAsync<bool>("BookHotel", null);
+booking = await context.CallEntityAsync(new EntityId(nameof(Booking), entityGuid),"UpdateHotel", isHotelBooked);
+if (booking.Hotel)
+  {
+     var isTaxiBooked = await context.CallActivityAsync<bool>("BookTaxi", null);
+     booking = await context.CallEntityAsync(new EntityId(nameof(Booking), entityGuid),"UpdateTaxi", isTaxiBooked);
+     if (booking.Taxi)
+       {
+         var isFlightBooked = await context.CallActivityAsync<bool>("BookFlight", null);
+         booking = await context.CallEntityAsync(new EntityId(nameof(Booking), entityGuid),"UpdateFlight", isFlightBooked);
+       }
+       else // hotel booked, taxi not booked - cancel hotel
+       {
+         await context.CallActivityAsync<bool>("CancelHotel", null);
+         booking =  await context.CallEntityAsync(new EntityId(nameof(Booking), entityGuid),"UpdateHotel", false);
+       }
+       // hotel booked, taxi booked, flight not booked - cancel hotel & taxi
+       if (booking.Hotel && booking.Taxi && !booking.Flight)
+         {
+           await context.CallActivityAsync<bool>("CancelHotel", null);
+           booking = await context.CallEntityAsync(new EntityId(nameof(Booking), entityGuid),"UpdateHotel", false);
+           await context.CallActivityAsync<bool>("CancelTaxi", null);
+           booking = await context.CallEntityAsync(new EntityId(nameof(Booking), entityGuid),	"UpdateTaxi", false);
+         }
+   }
+\end{lstlisting}
+\par Folosind Durable Functions, codul de orchestrare se simplifică considerabil, deoarece excepţiile ce apar în cadrul unei orchestrări declanşează în mod automat marcarea acelei orchestrări ca fiind \emph{Failed}, ceea ce poate fi monitorizat în mod automat pentru a fixa eventualele cazuri de eşec pe flow-ul de rollback. 
+\par Din punct de vedere al structurii codului, acesta acum descrie în procedural maşina de stări ce este implementată de serviciu, iar framework-ul asigură execuţia acestuia în mod durabil, printr-un mecanism de execuţie al orchestrării bazat pe event-sourcing. Practic, orchestrarea este re-executată de fiecare data când un eveniment este ridicat pentru aceasta. Evenimentele pot avea diferite surse, interne sau externe. Evenimentele externe sunt cele iniţiate de utilizatori sau alte servicii, de exemplu cand serviciul de orchestrare este anunţat printr-un eveniment că o anumită acţiune s-a terminat. Evenimentele interne sunt cele care determină re-execuţia unei orchestrări când un cronometru durabil care ii se adresează expiră, sau o sub-orchestrare sau o activitate ce este inlănţuită în mod direct este finalizată. 
+\par Atunci când o orchestrare este re-executată, aceasta sare în mod automat peste paşii care au fost executaţi deja. De fiecare dată cand prin intermediul contextului este inregistrată o sub-acţiune a unei orchestrări, o intrare în tabela de istoric este generată care inregistrează statusul si eventualul rezultat al acelei sub-acţiuni. Atunci când orchestrarea este re-executată, aceasta incarcă din memorie toţi paşii care au fost deja executaţi şi înregistrează doar acţiunile noi ce trebuiesc înregistrate. Astfel, este practic suportată în mod standard o strategie care minimizează request-urile către serviciile terţe şi care oferă o garanţie de execuţie cel putin o dată a activităţilor, fără însă a abuza în mod activ de aceasta. În cazul în care pe perioada execuţiei nici o exceptie ne-asteptată nu apare, fiecare activitate este executată exact o dată. Acest suport care în mod clasic necesita destul de mult design si efort de implementare, este oferit de către Durable Functions, acesta fiind un alt avantaj pentru a alege această tehnologie pentru a manageria workflow-uri de lungă durată în cloud. 
+\par La nivelul Activităţilor, acestea gestionează comunicarea cu serviciile externe. Din punct de vedere al execuţiei acestea sunt rulate urmând o garanţie de cel puţin o dată, iar din acest motiv implementarea lor este indicată să fie idempotentă, pentru a evita potenţialele acţiuni duplicate, în cazul unei execuţii multiple. Pe de altă parte, din cuauză ca acestea nu sunt re-executate de mai multe ori în mod recurent, acestea nu trebuie sa respecte aceleaşi restrictii ca orchestrările, şi pot avea comportament ne-deterministic. Rezultatul acestora este returnat către orchestrări, iar acestea la rândul lor updatează entitatea care menţine starea rezervării. 
+
 \chapter {Rezultate şi Concluzii}
 
 \section{Concluzii}

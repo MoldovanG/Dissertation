@@ -23,5 +23,6 @@
 \contentsline {subsection}{\numberline {3.2.5}Cronometre durabile.}{19}%
 \contentsline {subsection}{\numberline {3.2.6}Optimizarea numarului de request-uri}{19}%
 \contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind durable Functions}{20}%
-\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{21}%
-\contentsline {section}{\numberline {4.1}Concluzii}{21}%
+\contentsline {subsection}{\numberline {3.3.1}Noua Arhitectură}{22}%
+\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{26}%
+\contentsline {section}{\numberline {4.1}Concluzii}{26}%
