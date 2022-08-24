@@ -22,7 +22,10 @@
 \contentsline {subsection}{\numberline {3.2.4}Interacţiunea din exterior cu workflow-ul. Operaţii de lungă durată}{18}%
 \contentsline {subsection}{\numberline {3.2.5}Cronometre durabile.}{19}%
 \contentsline {subsection}{\numberline {3.2.6}Optimizarea numarului de request-uri}{19}%
-\contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind durable Functions}{20}%
-\contentsline {subsection}{\numberline {3.3.1}Noua Arhitectură}{22}%
-\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{26}%
-\contentsline {section}{\numberline {4.1}Concluzii}{26}%
+\contentsline {subsection}{\numberline {3.2.7}Considerente de deployment şi scalabilitate}{20}%
+\contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind durable Functions}{21}%
+\contentsline {subsection}{\numberline {3.3.1}Noua Arhitectură}{23}%
+\contentsline {subsection}{\numberline {3.3.2}Cronometre Durabile în Durable Functions}{25}%
+\contentsline {subsection}{\numberline {3.3.3}Considerente de deployment şi scalabilitate}{26}%
+\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{28}%
+\contentsline {section}{\numberline {4.1}Concluzii}{28}%

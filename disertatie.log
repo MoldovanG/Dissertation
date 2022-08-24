@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  21 AUG 2022 21:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  24 AUG 2022 08:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -698,69 +698,79 @@ st^^Uari in-ter-me-di-are, ce vor eviden[]ia
  []
 
 
-Overfull \hbox (57.75298pt too wide) in paragraph at lines 364--364
+Overfull \hbox (13.69295pt too wide) in paragraph at lines 366--367
+\OT1/cmr/m/n/12 de baze de date pe pro-pria in-fras-truc-tur^^Ua. []In schimb a
+cest lu-cru poate afecta sca-la-bi-li-ta-tea
+ []
+
+[20]
+Overfull \hbox (2.83519pt too wide) in paragraph at lines 367--368
+\OT1/cmr/m/n/12 Ast-fel, execu[]ia ^^^Pn cloud a aces-tei ar-hi-tec-turi poate 
+veni at^at cu avan-taje de performan[]^^Ua
+ []
+
+
+Overfull \hbox (57.75298pt too wide) in paragraph at lines 368--368
 []\OT1/cmr/bx/n/17.28 Implementarea ar-hi-tec-tu-rii fo-lo-sind du-ra-ble Func-
 tions 
  []
 
 
-Overfull \hbox (3.99594pt too wide) in paragraph at lines 367--368
+Overfull \hbox (3.99594pt too wide) in paragraph at lines 371--372
 \OT1/cmr/m/n/12 Ja-vaS-cript), a[]a cum se arat^^Ua ^^^Pn mo-de-lele de aplica[
 ]ie Du-ra-ble Func-tions. O orchestra[]ie
  []
 
 
-Overfull \hbox (4.47128pt too wide) in paragraph at lines 367--368
+Overfull \hbox (4.47128pt too wide) in paragraph at lines 371--372
 \OT1/cmr/m/n/12 poate avea multe ti-puri di-fe-rite de ac[]iuni, in-clu-siv fun
 c[]ii de ac-ti-vi-tate, sub-orchestra[]ii,
  []
 
-[20]
-Overfull \hbox (9.38882pt too wide) in paragraph at lines 368--369
+[21]
+Overfull \hbox (9.38882pt too wide) in paragraph at lines 372--373
 \OT1/cmr/m/n/12 ^^^Pn se-rie, ^^^Pn pa-re-lel sau o combina[]ie a am-be-lor. Sp
 re de-o-se-bire de func[]iile de orches-tra-tor,
  []
 
 
-Overfull \hbox (8.6281pt too wide) in paragraph at lines 371--372
+Overfull \hbox (8.6281pt too wide) in paragraph at lines 375--376
 []\OT1/cmr/bx/n/12 Evenimentele Ex-terne \OT1/cmr/m/n/12 dea-se-me-nea im-ple-m
 en-teaz^^Ua un con-cept si-mi-lar cu pro-blema
  []
 
-[21]
-<images/durable_functions_arhitecture.png, id=97, 924.45375pt x 1035.87pt>
+[22]
+<images/durable_functions_arhitecture.png, id=100, 924.45375pt x 1035.87pt>
 File: images/durable_functions_arhitecture.png Graphic file (type png)
 <use images/durable_functions_arhitecture.png>
 Package pdftex.def Info: images/durable_functions_arhitecture.png  used on inpu
-t line 376.
+t line 380.
 (pdftex.def)             Requested size: 438.17273pt x 490.98434pt.
- [22 <./images/durable_functions_arhitecture.png>]
-Overfull \hbox (3.88379pt too wide) in paragraph at lines 384--385
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (3.88379pt too wide) in paragraph at lines 388--389
 \OT1/cmr/m/n/12 com-por-ta-men-tul ne-determinist (ape-luri asyn-crone prin re[
 ]ea) de lo-gica prin-ci-pal^^Ua
  []
 
 [23]
-Overfull \hbox (2.213pt too wide) in paragraph at lines 418--419
+Overfull \hbox (2.213pt too wide) in paragraph at lines 422--423
 []\OT1/cmr/m/n/12 Folosind Du-ra-ble Func-tions, co-dul de orches-trare se sim-
 pli-fic^^Ua con-si-de-ra-bil, de-o-a-rece
  []
 
-
-Overfull \hbox (2.0954pt too wide) in paragraph at lines 419--420
-\OT1/cmr/m/n/12 pen-tru aceasta. Eve-ni-men-tele pot avea di-fe-rite surse, in-
-terne sau ex-terne. Eve-ni-men-tele
- []
-
-[24] [25]
+[24] [25] [26] [27 <./images/durable_functions_arhitecture.png>]
 Capitolul 4.
-[26
+[28
 
 ] (./disertatie.lof)
 \tf@lof=\write5
 \openout5 = `disertatie.lof'.
 
- [27
+ [29
 
 ] (./disertatie.lot)
 \tf@lot=\write6
@@ -768,7 +778,7 @@ Capitolul 4.
 
 
 No file disertatie.bbl.
-[28
+[30
 
 ] (./disertatie.aux)
 
@@ -778,11 +788,11 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  6989 strings out of 480994
  102547 string characters out of 5916032
- 434003 words of memory out of 5000000
+ 432003 words of memory out of 5000000
  22399 multiletter control sequences out of 15000+600000
  541487 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,45p,1375b,1610s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,10n,45p,2064b,1610s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><c:/texlive/2019/texmf-dis
@@ -797,10 +807,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist
 pe1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-supe
 r/sfrm1200.pfb>
-Output written on disertatie.pdf (29 pages, 983866 bytes).
+Output written on disertatie.pdf (31 pages, 992328 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
+ 177 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
