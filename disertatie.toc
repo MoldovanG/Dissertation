@@ -25,7 +25,8 @@
 \contentsline {subsection}{\numberline {3.2.7}Considerente de deployment şi scalabilitate}{20}%
 \contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind durable Functions}{21}%
 \contentsline {subsection}{\numberline {3.3.1}Noua Arhitectură}{23}%
-\contentsline {subsection}{\numberline {3.3.2}Cronometre Durabile în Durable Functions}{25}%
-\contentsline {subsection}{\numberline {3.3.3}Considerente de deployment şi scalabilitate}{26}%
-\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{28}%
-\contentsline {section}{\numberline {4.1}Concluzii}{28}%
+\contentsline {subsection}{\numberline {3.3.2}Cronometre Durabile în Durable Functions}{26}%
+\contentsline {subsection}{\numberline {3.3.3}Considerente de deployment şi scalabilitate}{27}%
+\contentsline {subsection}{\numberline {3.3.4}Arhitectura non-serverless pentru execuţia durabila a workflow-urilor}{27}%
+\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{30}%
+\contentsline {section}{\numberline {4.1}Concluzii}{30}%

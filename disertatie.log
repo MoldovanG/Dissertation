@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  24 AUG 2022 08:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2020.3.22)  28 AUG 2022 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -746,39 +746,45 @@ File: images/durable_functions_arhitecture.png Graphic file (type png)
 Package pdftex.def Info: images/durable_functions_arhitecture.png  used on inpu
 t line 380.
 (pdftex.def)             Requested size: 438.17273pt x 490.98434pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (3.88379pt too wide) in paragraph at lines 388--389
+ [23 <./images/durable_functions_arhitecture.png>]
+Overfull \hbox (3.88379pt too wide) in paragraph at lines 387--388
 \OT1/cmr/m/n/12 com-por-ta-men-tul ne-determinist (ape-luri asyn-crone prin re[
 ]ea) de lo-gica prin-ci-pal^^Ua
  []
 
-[23]
-Overfull \hbox (2.213pt too wide) in paragraph at lines 422--423
+[24]
+Overfull \hbox (2.213pt too wide) in paragraph at lines 421--422
 []\OT1/cmr/m/n/12 Folosind Du-ra-ble Func-tions, co-dul de orches-trare se sim-
 pli-fic^^Ua con-si-de-ra-bil, de-o-a-rece
  []
 
-[24] [25] [26] [27 <./images/durable_functions_arhitecture.png>]
+[25] [26]
+<images/dtf_scaling.png, id=117, 628.84938pt x 253.44687pt>
+File: images/dtf_scaling.png Graphic file (type png)
+<use images/dtf_scaling.png>
+Package pdftex.def Info: images/dtf_scaling.png  used on input line 461.
+(pdftex.def)             Requested size: 438.17273pt x 176.5956pt.
+
+Overfull \hbox (1.46437pt too wide) in paragraph at lines 457--466
+[]\OT1/cmr/m/n/12 Alternativa la a lansa ser-vi-ciul de ma-na-ge-ment a workflo
+w-urilor ca func[]ii ser-ver-less
+ []
+
+
+Overfull \hbox (16.8045pt too wide) in paragraph at lines 457--466
+\OT1/cmr/m/n/12 du-ra-bila, este s^^Ua fie fo-lo-sit framework-ul ce st^^Ua la 
+baza aces-tora (Du-ra-ble Task Fra-mework),
+ []
+
+[27] [28 <./images/dtf_scaling.png>] [29]
 Capitolul 4.
-[28
+[30
 
 ] (./disertatie.lof)
 \tf@lof=\write5
 \openout5 = `disertatie.lof'.
 
- [29
-
-] (./disertatie.lot)
-\tf@lot=\write6
-\openout6 = `disertatie.lot'.
-
-
-No file disertatie.bbl.
-[30
+ (./disertatie.bbl) [31
 
 ] (./disertatie.aux)
 
@@ -786,10 +792,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6989 strings out of 480994
- 102547 string characters out of 5916032
- 432003 words of memory out of 5000000
- 22399 multiletter control sequences out of 15000+600000
+ 6995 strings out of 480994
+ 102724 string characters out of 5916032
+ 434014 words of memory out of 5000000
+ 22405 multiletter control sequences out of 15000+600000
  541487 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,10n,45p,2064b,1610s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -807,10 +813,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist
 pe1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/cm-supe
 r/sfrm1200.pfb>
-Output written on disertatie.pdf (31 pages, 992328 bytes).
+Output written on disertatie.pdf (32 pages, 1043434 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
+ 181 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

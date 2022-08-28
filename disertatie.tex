@@ -124,7 +124,7 @@ Scopul serviciilor Serverless este triplu :
        \source {https://www.cbinsights.com}
     \end{center}
 \end{wrapfigure}
-Ca rezultat, într-o aplicație cu adevărat Serverless, infrastructura de execuție este ascunsă clientului, iar clientul plătește doar pentru resursele pe care le utilizează efectiv. Serviciul este conceput astfel încât să poată gestiona rapid creșterile de consum prin scalare automată. Entitățile de bază în calculul fără server sunt funcții. Clientul își înregistrează funcțiile în furnizorul de servicii. Apoi, acele funcții pot fi invocate fie de un eveniment, fie direct prin apelarea acestora la cererea utilizatorilor. Rezultatele execuției sunt trimise înapoi clientului. Invocarea funcțiilor este delegată unuia dintre nodurile de calcul disponibile în interiorul furnizorului de servicii. De obicei, aceste noduri sunt containere cloud, cum ar fi Docker [100] sau un mediu de rulare izolat [67].
+Ca rezultat, într-o aplicație cu adevărat Serverless, infrastructura de execuție este ascunsă clientului, iar clientul plătește doar pentru resursele pe care le utilizează efectiv. Serviciul este conceput astfel încât să poată gestiona rapid creșterile de consum prin scalare automată. Entitățile de bază în calculul fără server sunt funcții. Clientul își înregistrează funcțiile în furnizorul de servicii. Apoi, acele funcții pot fi invocate fie de un eveniment, fie direct prin apelarea acestora la cererea utilizatorilor. Rezultatele execuției sunt trimise înapoi clientului. Invocarea funcțiilor este delegată unuia dintre nodurile de calcul disponibile în interiorul furnizorului de servicii.
 
 \par
 Deși conceptul de Serverless este relativ nou, acesta și-a deschis drumul în multe aplicații din lumea reală, de la instrumente de colaborare online la sisteme integrate (IoT), având o creştere în adopţie foarte rapidă, lucru vizibil şi în figura ~\ref{fig:cloud_computing_graph}. Această creştere este datorată în mare parte usurinţei proceselui de dezvoltare a aplicaţiilor Serverless şi beneficiile pe care le aduc din punct de vedere al scalării în mod automat, şi a gestionării complete a infrastructurii ce stă la baza aplicaţiilor. 
@@ -376,11 +376,10 @@ Utilizând această noua strategie, codul nu va mai fi executat ca parte dintr-u
 \subsection{Noua Arhitectură}
 \par Folosind conceptele tocmai definite, vom mapa problemele ce trebuie rezolvate pentru a implementa serviciul de gestiune a rezervărilor către soluţiile puse la dispoziţie de Durable Functions. 
  \begin{figure}[h]
-\begin{center}
+\centering
         \includegraphics[width=1\textwidth]{images/durable_functions_arhitecture}
 			 \caption{Rezervare distribuită folosind Durable Functions}
 			 \label{fig:durable-functions-booking-arhitecture}
-\end{center}
 \end{figure}
  \par Analizând ~\ref{fig:durable-functions-booking-arhitecture} putem observa urmatoarea corespondentă între conceptele de bază expuse de Durable Functions, si necesităţile noastre : 
  \begin{itemize}
@@ -451,14 +450,32 @@ if (!booking.isHotelBooked){
 \begin{itemize}
 \item Scalare pe orizontală infinită, fără restricţii de performanţă şi fără complexitate suplimentară în nivelul de rutare, deoarece acest lucru este deja gestionat de Azure.
 \item Mod de calcul a costurilor foarte avantajos, deoarece se plăteşte doar timpul de execuţie, nu şi timpul de aşteptare. Iar intr-un sistem în care timpul de execuţie reprezintă mai puţin de 2\% din timpul total de viaţă a workflow-ului (deoarece majoritatea timpului este petrecută asteptând timere sau eveniment externe) acest lucru este foarte valoros si duce la o reducere considerabilă a costurilor de execuţie a unui astfel de sistem. 
-\par Deşi această limitare a opţiunilor de deployment poate fi o vulnerabilitate pe viitor, pentru moment această soluţie este cea mai bună deoarece în piaţă nu există un competitor care să ofere tehnologie statefull serverless într-un mod mai bun.  
 \end{itemize}
+\par Deşi această limitare a opţiunilor de deployment poate fi o vulnerabilitate pe viitor, pentru moment această soluţie este cea mai bună deoarece în piaţă nu există un competitor care să ofere tehnologie statefull serverless într-un mod mai bun.  
+\subsection{Arhitectura non-serverless pentru execuţia durabila a workflow-urilor}
+\quad Arhitectura serverless vine cu numeroase beneficii, mai ales în zona de management a deploymentului şi a scalabilităţii automate. În schimb, aşa cum a fost punctat si in secţiunea anterioară, alegerea acestei modalităţi de execuţie suferă de vendor lock-in, iar acest lucru poate fi un impediment pentru anumite companii, care preferă flexibilitate pe termen lung. 
+\par Alternativa la a lansa serviciul de management a workflow-urilor ca funcţii serverless durabila, este să fie folosit framework-ul ce stă la baza acestora (Durable Task Framework), într-un mod self-hosted. Acest lucru inseamnă ca din punct de vedere al infrastructurii, aplicaţia va semăna cu varianta iniţială analizată, care nu folosea nici un framework. Serviciul va rula pe un server web clasic, având ca suport la nivelul stocării datelor, o bază de date relaţională (aici DTF oferă mai multe opţiuni, dar pentru exemplul curent vom analiza varianta în care DTF providerul este bazat pe SQLServer).
+Din punct de vedere al scalabilităţii, această configuraţie are aceleaşi avantaje si dezavantaje ca orice aplicaţie web clasică. În schimb, din punct de vedere al managementului de workflow-uri de lungă durata, folosind DTF, toate primitivele necesare sunt deja implementate reducând semnificativ timpul de dezvoltare al unui astfel de serviciu. Astfel, putem pune DTF in categoria de servicii ce imbunătaţesc productivitatea dezvoltatorilor.
+ \begin{figure}[h]
+\centering
+        \includegraphics[width=1\textwidth]{images/dtf_scaling}
+			 \caption{Scalare automată a workerilor DTF}
+			 \label{fig:dtf-scaling}
+			 \source {https://microsoft.github.io/durabletask-mssql}
+\end{figure}
+\par Aşa cum se poate observa şi în figura ~\ref{fig:dtf-scaling}. DTF realizează acelaşi potenţial de scalabilitate ca sistemul clasic analizat iniţial, prin posibilitatea de a adauga mai mulţi workeri (instanţe ale serviciliu ce foloseste DTF) conecţaţi la aceeaşi bază de date. Acest lucru este posibil, printr-un mecanism de locking la nivelul bazei de date, ce previne mai mulţi workeri sa consume aceeaşi munca în mod concurent. Fiecare worker execută un mecanism de polling la nivelul bazei de date, care incearcă să rezerve un work-item pentru acesta. Atât timp cât logica de selecţie a următorului work-item este rezistentă la execuţii paralele, atunci un numar nelimitat de workerii pot fi adaugaţi împotriva aceleaşi baze de date. 
+\par Abilitatea de a scala orizontal numărul de workeri conectaţi la o bază de date, evidenţiază în acelaşi timp si vulnerabilitatea acestui sistem : Baza de date poate limita performanţa sistemului, daca numărul de workeri conectaţi la aceasta este prea mare. Singura soluţie pentru a imbunătăţii performanţa sistemului atunci când limitele bazei de date sunt atinse, este scalarea pe verticală a acesteia. Însa, scalarea pe verticală nu poate fi infinită, din cauza limitărilor din punct de vedere hardware care există acum în industrie. 
+\par Pentru a scala pe orizontală şi la nivelul bazei de date, trebuie implementat un mecanism de sharding, ce conţine si logică de rutare, asemănător celui descris in secţiunile anterioare. Acest lucru este necesar pentru a garanta ca evenimentele transmise către un anume workflow, ajung către instanţa care a şi creat acel workflow. 
 \chapter {Rezultate şi Concluzii}
 
 \section{Concluzii}
+\quad Rezolvarea unei probleme comune a fost abordată în două moduri diferite. În urma acestui efort, au fost identificate numeroase probleme generice de care dezvoltatorii se lovesc atunci cand doresc sa dezvolte sisteme durabile, ce pot orchestra workflow-uri de lungă durată, într-un sistem distribuit. 
+\par Dezvoltarea unui sistem de management al workflow-urilor de lunga durată într-un mediu distribuit este o problemă cu foarte multe cazuri speciale, mai ales în zona durabilităţii sistemului si garanţiilor de execuţie pe care acesta le oferă. 
+\par Observând caracterul repetabil al acestor cazuri speciale, în piaţa au aparut diverse framework-uri care rezolvă în mod generic aceste probleme şi expun interfeţe uşor de consumat, printre care cel mai matur fiind DurableTaskFramework. Folosind această tehnologie, a fost dezvoltat un serviciu demonstrativ, ce rezolvă problema rezervării unei excursii şi care expune o metodă interactivă de a vizualiza managementul unei tranzacţii distribuite. Aplicaţia este disponibila în mod public la \emph{https://durable-saga-front-end.web.app/}. 
+\par Primitivele expuse de Durable Functions au înjumătăţit timpul de dezvoltare a soluţiei şi au generat un serviciu cu costuri aproape de 0, deoarece sistemul este în totalite serverless. 
+\par Pe viitor vor fi abordate eventuale îmbunătăţiri ale DTF în zonele în care au fost descoperite vulnerabilităţi în cadrul acestei lucrări respectiv în adăugarea suportului pentru throttling in DTF.
 
-\bibliographystyle{abbrv}
+\bibliographystyle{plain}
 \listoffigures
-\listoftables
-\bibliography{References}
+\bibliography{./References}
 \end{document}
