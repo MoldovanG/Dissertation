@@ -1,5 +1,48 @@
-[0] Config.pm:304> INFO - This is Biber 2.14
-[0] Config.pm:307> INFO - Logfile is 'disertatie.blg'
-[97] biber-MSWIN32:322> INFO - === 
-[784] Utils.pm:320> ERROR - Cannot find 'disertatie.bcf'!
-[784] Biber.pm:132> INFO - ERRORS: 1
+This is BibTeX, Version 0.99d (TeX Live 2019/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: disertatie.aux
+The style file: abbrv.bst
+Database file #1: disertatie.bib
+Warning--I didn't find a database entry for "jonas2017"
+You've used 6 entries,
+            2118 wiz_defined-function locations,
+            528 strings with 5691 characters,
+and the built_in function-call counts, 3175 in all, are:
+= -- 260
+> -- 318
+< -- 1
++ -- 128
+- -- 120
+* -- 290
+:= -- 587
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 78
+chr.to.int$ -- 0
+cite$ -- 6
+duplicate$ -- 73
+empty$ -- 127
+format.name$ -- 120
+if$ -- 592
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 6
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 71
+preamble$ -- 1
+purify$ -- 72
+quote$ -- 0
+skip$ -- 60
+stack$ -- 0
+substring$ -- 60
+swap$ -- 16
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 0
+while$ -- 14
+width$ -- 7
+write$ -- 68
+(There was 1 warning)

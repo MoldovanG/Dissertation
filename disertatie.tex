@@ -1,3 +1,126 @@
+\RequirePackage{filecontents}
+\begin{filecontents}{\jobname.bib}
+@article{baldini2017,
+  author    = {Ioana Baldini and
+               Paul C. Castro and
+               Kerry Shih{-}Ping Chang and
+               Perry Cheng and
+               Stephen J. Fink and
+               Vatche Ishakian and
+               Nick Mitchell and
+               Vinod Muthusamy and
+               Rodric M. Rabbah and
+               Aleksander Slominski and
+               Philippe Suter},
+  title     = {Serverless Computing: Current Trends and Open Problems},
+  journal   = {CoRR},
+  volume    = {abs/1706.03178},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1706.03178},
+  eprinttype = {arXiv},
+  eprint    = {1706.03178},
+  timestamp = {Mon, 13 Aug 2018 16:47:26 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/BaldiniCCCFIMMR17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{rajkumar2017,
+  author    = {Rajkumar Buyya and
+               Satish Narayana Srirama and
+               Giuliano Casale and
+               Rodrigo N. Calheiros and
+               Yogesh Simmhan and
+               Blesson Varghese and
+               Erol Gelenbe and
+               Bahman Javadi and
+               Luis Miguel Vaquero and
+               Marco A. S. Netto and
+               Adel Nadjaran Toosi and
+               Maria Alejandra Rodriguez and
+               Ignacio Mart{\'{\i}}n Llorente and
+               Sabrina De Capitani di Vimercati and
+               Pierangela Samarati and
+               Dejan S. Milojicic and
+               Carlos A. Varela and
+               Rami Bahsoon and
+               Marcos Dias de Assun{\c{c}}{\~{a}}o and
+               Omer F. Rana and
+               Wanlei Zhou and
+               Hai Jin and
+               Wolfgang Gentzsch and
+               Albert Y. Zomaya and
+               Haiying Shen},
+  title     = {A Manifesto for Future Generation Cloud Computing: Research Directions
+               for the Next Decade},
+  journal   = {CoRR},
+  volume    = {abs/1711.09123},
+  year      = {2017},
+  url       = {http://arxiv.org/abs/1711.09123},
+  eprinttype = {arXiv},
+  eprint    = {1711.09123},
+  timestamp = {Fri, 22 Apr 2022 11:03:33 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1711-09123.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{paul2019,
+  author    = {Paul C. Castro and
+               Vatche Ishakian and
+               Vinod Muthusamy and
+               Aleksander Slominski},
+  title     = {The server is dead, long live the server: Rise of Serverless Computing,
+               Overview of Current State and Future Trends in Research and Industry},
+  journal   = {CoRR},
+  volume    = {abs/1906.02888},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1906.02888},
+  eprinttype = {arXiv},
+  eprint    = {1906.02888},
+  timestamp = {Wed, 04 Dec 2019 15:23:27 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1906-02888.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{hassan2017,
+author = {Hassan, Hassan and Barakat, Saman and Sarhan, Qusay},
+year = {2021},
+month = {07},
+pages = {},
+title = {Survey on serverless computing},
+volume = {10},
+journal = {Journal of Cloud Computing},
+doi = {10.1186/s13677-021-00253-7}
+}
+
+@article{jonas2019,
+  author    = {Eric Jonas and
+               Johann Schleier{-}Smith and
+               Vikram Sreekanti and
+               Chia{-}che Tsai and
+               Anurag Khandelwal and
+               Qifan Pu and
+               Vaishaal Shankar and
+               Jo{\~{a}}o Carreira and
+               Karl Krauth and
+               Neeraja Jayant Yadwadkar and
+               Joseph E. Gonzalez and
+               Raluca Ada Popa and
+               Ion Stoica and
+               David A. Patterson},
+  title     = {Cloud Programming Simplified: {A} Berkeley View on Serverless Computing},
+  journal   = {CoRR},
+  volume    = {abs/1902.03383},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1902.03383},
+  eprinttype = {arXiv},
+  eprint    = {1902.03383},
+  timestamp = {Mon, 31 Jan 2022 16:34:15 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1902-03383.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@INPROCEEDINGS{megargel2021,  author={Megargel, Alan and Poskitt, Christopher M. and Shankararaman, Venky},  booktitle={2021 IEEE 25th International Enterprise Distributed Object Computing Conference (EDOC)},   title={Microservices Orchestration vs. Choreography: A Decision Framework},   year={2021},  volume={},  number={},  pages={134-141},  doi={10.1109/EDOC52215.2021.00024}}
+\end{filecontents}
 \documentclass[a4paper,12pt]{report}
 \usepackage[a4paper,inner = 0.5cm, outer = 0.5cm, top = 2cm, bottom = 2cm]{geometry}
 
@@ -100,18 +223,18 @@ breaklines=true
 \setcounter{page}{2}
 \chapter{Introducere}
 \section{Motivatie}
-\quad Unul din principiile de baza ale programării este reutilizarea. Motivaţia din spatele acestei lucrări o reprezintă dorinţa de o contribui la un framework care rezolvă o problemă generică, cu care se confruntă toţi dezvoltatorii care trebuie sa gestioneze tranzacţii distribuite. Analiza diferitelor metode pentru rezolvarea problemei de gestiune a workflow-urilor în cloud, în special într-o arhitectură ce se bazează pe funcţii în cloud a fost o prioritate pentru mine în ultimii ani. 
+\quad Unul din principiile de baza ale programării este reutilizarea. Motivaţia din spatele acestei lucrări o reprezintă dorinţa de a contribui la un framework care rezolvă o problemă generică, cu care se confruntă toţi dezvoltatorii care trebuie să gestioneze tranzacţii distribuite. Analiza diferitelor metode pentru rezolvarea problemei de gestiune a workflow-urilor în cloud, în special într-o arhitectură ce se bazează pe funcţii în cloud a fost o prioritate pentru mine în ultimii ani. 
 \par
-Serverless, sau Functions-as-a-Service (FaaS), este o paradigmă din ce în ce mai populară pentru dezvoltarea de aplicații, deoarece oferă scalare infintă implicită și facturare bazată pe consum. Cu toate acestea, garanţiile slable de execuţie și suportul nativ pentru stocare a stării a FaaS creează provocări serioase atunci când se dezvoltă aplicații care necesită stare persistentă, garanţii de execuţie sau sincronizare. Acest lucru a motivat o nouă generație de soluţii serverless care oferă abstractizări ce stochează starea aplicaţiei. De exemplu, noua soluţie Azure Durable Functions (DF), o extindere peste deja existenta Azure Functions. Modelul îmbunătățește FaaS cu actori, fluxuri de lucru și secțiuni critice.
+Serverless, sau Functions-as-a-Service (FaaS), este o paradigmă din ce în ce mai populară pentru dezvoltarea de aplicații, deoarece oferă scalare infinită implicită și facturare bazată pe consum. Cu toate acestea, garanţiile slabe de execuţie și suportul nativ pentru stocare a stării a FaaS creează provocări serioase atunci când se dezvoltă aplicații care necesită stare persistentă, garanţii de execuţie sau sincronizare. Acest lucru a motivat o nouă generație de soluţii serverless care oferă abstractizări ce stochează starea aplicaţiei. De exemplu, noua soluţie Azure Durable Functions (DF), o extindere peste deja existenta Azure Functions. Modelul îmbunătățește FaaS cu actori, fluxuri de lucru și secțiuni critice.
 \par
-În acest context în care dezvoltatorii incearcă sa dezvolte aplicaţii ce gestiunează workflow-uri  de lungă durată, cu toţii rezolvă aceeaşi problemă şi anume lipsa separării intre nivelul de execuţie si nivelul de stocare a soluţiilor existente FaaS. Cu toţii rezolvă o problemă generică, de salvare a stării în anumite puncte ale execuţiei, pentru a putea relua workflow-ul în eventualitatea în care agentul pe care rulează aplicaţie pică inainte de finalizarea workflow-ului. Acest lucru era foarte greu de realizat in arhitecturi serverless deoarece toate soluţiile existente până la apariţia Azure Durable Functions, suportau doar execuţii stateless în mod standard. Deci până la apariţia soluţiilor ce oferă garanţii de execuţie puternice in lumea Serverless, această tehnologie nu era o opţiune populară pentru dezvoltarea aplicaţiilor ce aveau nevoie de gestionare a stării şi era limitată la execuţia unor parţi mici ale aplicaţiilor pentru care starile intermediare nu erau importante. 
+În acest context în care dezvoltatorii incearcă sa dezvolte aplicaţii ce gestiunează workflow-uri  de lungă durată, cu toţii rezolvă aceeaşi problemă şi anume lipsa separării intre nivelul de execuţie si nivelul de stocare a soluţiilor existente FaaS. Cu toţii rezolvă o problemă generică, de salvare a stării în anumite puncte ale execuţiei, pentru a putea relua workflow-ul în eventualitatea în care agentul pe care rulează aplicaţia pică inainte de finalizarea workflow-ului. Acest lucru era foarte greu de realizat în arhitecturi serverless deoarece toate soluţiile existente până la apariţia Azure Durable Functions, suportau doar execuţii stateless în mod standard. Deci până la apariţia soluţiilor ce oferă garanţii de execuţie puternice in lumea Serverless, această tehnologie nu era o opţiune populară pentru dezvoltarea aplicaţiilor ce aveau nevoie de gestionare a stării şi era limitată la execuţia unor parţi mici ale aplicaţiilor pentru care stările intermediare nu erau importante. 
 \section{Context}
 \quad Serverless diferă de conceptele tradiționale de cloud computing în sensul că infrastructura și platformele în care serviciile rulează sunt ascunse clienților. În această abordare, clienții sunt preocupați doar de funcționalitatea dorită a aplicației lor, iar restul este delegată furnizorului de servicii. \par
 
 Scopul serviciilor Serverless este triplu : 
 \begin{itemize}
 \item Scuteşte dezvoltatorii de servicii cloud de la interacţiunea cu infrastructura sau diferite platforme
-\item Converteste modelul de facturare din cel clasic la cel bazat pe consum
+\item Converteşte modelul de facturare din cel clasic la cel bazat pe consum
 \item Scalarea automată a serviciului în funcție de cererea clienților.
 \end{itemize}
 \par
@@ -132,11 +255,11 @@ Deși conceptul de Serverless este relativ nou, acesta și-a deschis drumul în 
 Unul din lucrurile care poate duce adopţia tehnologiei serverless la un cu totul alt nivel, este tocmai capacitatea de a putea dezvolta aplicaţii intregi, ce se pot baza pe starea sistemului în cadrul execuţiei şi capacitatea de a gestiona long running workflows, o nevoie care este prezentă în mai toate aplicaţiile curente. 
 \section{Alte analize ale problemelor curente a arhitecturii Serverless}
 \quad Există mai multe provocări cu care se confruntă în prezent serviciile Serverless. Există unele sondaje și recenzii ale literaturii care discută aceste provocări \cite{baldini2017,rajkumar2017,paul2019,hassan2017,jonas2019}.
-\par\emph{Baldini et al.} \cite{baldini2017} enumeră o serie de probleme cu care se confruntă arhitectura serverless, printre care costul, care reprezintă un avantaj pentru aceasta arhitectura doar dacă se execută metode care nu sunt bazate pe prelucrare input-output. Altfel, este mai eficient din punct de vedere al costurilor folosirea soluţiilor clasice în cloud cum ar fi maşini virtuale rezervata sau containere. O altă problemă semnalată este cea a cold-start-ului care poate face o aplicaţie bazata pe funcţii serverless sa pară înceată daca pentru fiecare apel este necesar un cold start, din cauză ca traficul nu este indeajuns de mult pentru a împiedica funcţia sa scaleze la 0. 
-\par\emph{Rajkumar et al.} \cite{rajkumar2017} discută despre dificultăţile dezvoltării unei arhitecturi serverless din punct de vedere al limitărilor cu care vine această noua tehnologie si anume limitările de timp al executiei, de memorie al agentului si de management al stării. Acesta crede că este nevoie de o schimbare a mentalităţii de dezvoltare a aplicaţiilor pentru a benefecia la adevaratul său potenţial de tehnologiile Serverless, iar momentul în care aplicaţiile enterpise complete vor fi migrate sau dezvoltate complet pe o arhitectură Serverless este înca departe. Acesta vede această tehnologie ca pe o unealtă ajutătoare în dezvoltarea aplicaţiilor, dar pe viitor poate ajunge să fie nucleul aplicaţiilor.  
-\par\emph{Castro et al.} \cite{paul2019} ridică problema dezvoltării de aplicaţii statefull folosind tehnologii Serverless in viitor, o temă ce in aceea perioadă era doar o idee, dar după cum urmează sa fie prezentat în aceasta lucrare, acum este o realitate. Alte probleme menţionate ar fi usurinţa cu care poate fi portată o aplicaţie legacy către o arhitectură Serverless, deoarece nu este de dorit sa se piardă toate acele ora valoroase care au fost deja investite în aplicaţiile existente. 
-\par\emph{Hassan et al.} \cite{hassan2017} discuta despre problema limitării la un singur provider atunci cand vine vorba de arhitecturi serverless, deoarece codul pentru un anumit provider de exemplu AWS Lambda, nu e portabil către alt provider, de exemplu Microsoft Azure Functions. 
-\par\emph{Jonas et al.} \cite{jonas2017} prezintă ineficienţele arhitecturii serverless atunci când vine vorba de procesarea operaţiilor care în mod normal ar beneficia de pe urma unui sistem cu mai multe nuclee, şi implicaţiile pe care aceasta limitare (2 nuclee per funcţie) o are atunci când vine vorba de paralelizarea acţiunilor pentru a îmbunăţăţii viteza. Impactul major în acest caz este creşterea semnificativă a datelor transmise pe reţea pentru a obţine acelasi grad de paralelism într-un sistem serverless versul unul clasic în cloud. 
+\par\emph{Baldini et al.} \cite{baldini2017} enumeră o serie de probleme cu care se confruntă arhitectura serverless, printre care costul, care reprezintă un avantaj pentru aceasta arhitectura doar dacă se execută metode care nu sunt bazate pe prelucrare input-output. Altfel, este mai eficient din punct de vedere al costurilor folosirea soluţiilor clasice în cloud cum ar fi maşini virtuale rezervate sau containere. O altă problemă semnalată este cea a cold-start-ului care poate face o aplicaţie bazată pe funcţii serverless să pară înceată daca pentru fiecare apel este necesar un cold start, din cauză că traficul nu este indeajuns de mult pentru a împiedica funcţia sa scaleze la 0. 
+\par\emph{Rajkumar et al.} \cite{rajkumar2017} discută despre dificultăţile dezvoltării unei arhitecturi serverless din punct de vedere al limitărilor cu care vine această noua tehnologie si anume limitările de timp al execuţiei, de memorie al agentului şi de management al stării. Acesta crede că este nevoie de o schimbare a mentalităţii de dezvoltare a aplicaţiilor pentru a benefecia la adevaratul său potenţial de tehnologiile Serverless, iar momentul în care aplicaţiile enterpise complete vor fi migrate sau dezvoltate complet pe o arhitectură Serverless este încă departe. Acesta vede această tehnologie ca pe o unealtă ajutătoare în dezvoltarea aplicaţiilor, dar pe viitor poate ajunge să fie nucleul aplicaţiilor.  
+\par\emph{Castro et al.} \cite{paul2019} ridică problema dezvoltării de aplicaţii statefull folosind tehnologii Serverless în viitor, o temă ce in aceea perioadă era doar o idee, dar după cum urmează sa fie prezentat în această lucrare, acum este o realitate. Alte probleme menţionate ar fi usurinţa cu care poate fi portată o aplicaţie legacy către o arhitectură Serverless, deoarece nu este de dorit sa se piardă toate acele ora valoroase care au fost deja investite în aplicaţiile existente. 
+\par\emph{Hassan et al.} \cite{hassan2017} discută despre problema limitării la un singur provider atunci cand vine vorba de arhitecturi serverless, deoarece codul pentru un anumit provider de exemplu AWS Lambda, nu e portabil către alt provider, de exemplu Microsoft Azure Functions. 
+\par\emph{Jonas et al.} \cite{jonas2017} prezintă ineficienţele arhitecturii serverless atunci când vine vorba de procesarea operaţiilor care în mod normal ar beneficia de pe urma unui sistem cu mai multe nuclee, şi implicaţiile pe care aceasta limitare (2 nuclee per funcţie) o are atunci când vine vorba de paralelizarea acţiunilor pentru a îmbunăţăţii viteza. Impactul major în acest caz este creşterea semnificativă a datelor transmise pe reţea pentru a obţine acelasi grad de paralelism într-un sistem serverless versus unul clasic în cloud. 
 
 
 \section{Conţinutul lucrării}
@@ -145,8 +268,8 @@ Unul din lucrurile care poate duce adopţia tehnologiei serverless la un cu totu
 \item Partea teoretică în care va fi analizat Durable Task Framework şi cum funcţionează acesta
 \item Partea practică ce va compara aceaşi aplicaţie, dezvoltată în 2 moduri (clasic şi folosind DTF)
 \end{itemize}
-\par În prima parte a lucrării va fi analizată tehnologia ce stă la baza soluţiilor de management a workflow-uri în cloud si anume, Durable Task Framework. Vom analiza modul în care este separat domeniul de execuţie de domeniul de stocare, care sunt interfeţele pe care trebuie sa le respecte un provider, care sunt constrângerile care trebuie respectate atunci se foloseste această tehnologie si bineînteles care sunt beneficiile si dezavantajele sale. 
-\par În a 2a parte va fi analizat un exemplu clasic în literatura managementului de workflow-uri si anume cazul de rezervare multiplă în cazul unei călatorii. Această mini-aplicaţie a fost dezvoltată atât folosind metode clasice, cât şi folosind Durable Task Framework. Folosind aceste 2 abordari, vor fi analizate : 
+\par În prima parte a lucrării va fi analizată tehnologia ce stă la baza soluţiilor de management a workflow-uri în cloud si anume, Durable Task Framework. Vom analiza modul în care este separat domeniul de execuţie de domeniul de stocare, care sunt interfeţele pe care trebuie să le respecte un provider, care sunt constrângerile care trebuie respectate atunci când se foloseşte această tehnologie şi bineînteles care sunt beneficiile si dezavantajele sale. 
+\par În a 2-a parte va fi analizat un exemplu clasic în literatura managementului de workflow-uri şi anume cazul de rezervare multiplă în cazul unei călatorii. Această mini-aplicaţie a fost dezvoltată atât folosind metode clasice, cât şi folosind Durable Task Framework. Folosind aceste 2 abordari, vor fi analizate : 
 \begin{itemize}
 \item Capaciţăţile fiecărui sistem si nivelul de rezilienţă împotriva dezastrelor pe care îl pot demonstra
 \item Diferenţele de dezvoltare între cele 2 abordări
@@ -155,7 +278,7 @@ Unul din lucrurile care poate duce adopţia tehnologiei serverless la un cu totu
 \end{itemize}
 \chapter{Analiza Tehnologiei Durable Task Framework si a providerilor disponibili}
 \section{Analiză generală}
-\quad Durable Task Framework (DTFx) este o bibliotecă care permite utilizatorilor să gestioneze workflow-uri persistente de lungă durată (denumite orchestrari) în C\# folosind sintagme clasica de codare async/await. DTF stă la baza soluţiilor Microsoft de gestionare a workflow-urilor durabile în cloud, şi folosind această tehnologie, a fost expusă prima soluţie serverless ce permite gestionarea stării : Azure Durable Functions. 
+\quad Durable Task Framework (DTFx) este o bibliotecă care permite utilizatorilor să gestioneze workflow-uri persistente de lungă durată (denumite orchestrari) în C\# folosind sintagme clasice de codare async/await. DTF stă la baza soluţiilor Microsoft de gestionare a workflow-urilor durabile în cloud şi folosind această tehnologie, a fost expusă prima soluţie serverless ce permite gestionarea stării : Azure Durable Functions. 
 \par Din punct de vedere al arhitecturii framework-ului, acesta are 2 părti:
 \begin{itemize} 
 \item DTF Core ce conţine nivelul de abstractizare al gestionării, şi care implementează conceptele de bază ce permit programarea orchestrărilor folosind sintagme async await
@@ -179,7 +302,7 @@ Modelul de arhitectură bazat pe evenimente constă din două topologii principa
 \end{center}
 \end{figure}
 
-\par Durable task framework, implementează o arhitectură de tip mediator central, si expune bazele pentru a putea crea propriul mediator pentru gestiunea unui workflow de lungă durată. Pentru a analiza implementarea conceptului de orchestrare bazată pe evenimente, vom analiza implementarea de DTF împreuna cu Sql Server Provider, pentru a face o transpunere a conceptelor teoretice în lumea DTF. În ~\ref{fig:sql-server-provider} se poate observa structura schemei ce susţine framework-ul atunci cand este rulat împreuna cu un SQL Server Provider. Acesta implementează conceptele teoretice intr-un nivel de stocare bazat pe SQL server. 
+\par Durable task framework, implementează o arhitectură de tip mediator central, si expune bazele pentru a putea crea propriul mediator pentru gestiunea unui workflow de lungă durată. Pentru a analiza implementarea conceptului de orchestrare bazată pe evenimente, vom analiza implementarea de DTF împreuna cu Sql Server Provider, pentru a face o transpunere a conceptelor teoretice în lumea DTF. În figura ~\ref{fig:sql-server-provider} se poate observa structura schemei ce susţine framework-ul atunci cand este rulat împreuna cu un SQL Server Provider. Acesta implementează conceptele teoretice intr-un nivel de stocare bazat pe SQL server. 
  
  \begin{figure}[h]
 \begin{center}
@@ -471,11 +594,11 @@ Din punct de vedere al scalabilităţii, această configuraţie are aceleaşi av
 \section{Concluzii}
 \quad Rezolvarea unei probleme comune a fost abordată în două moduri diferite. În urma acestui efort, au fost identificate numeroase probleme generice de care dezvoltatorii se lovesc atunci cand doresc sa dezvolte sisteme durabile, ce pot orchestra workflow-uri de lungă durată, într-un sistem distribuit. 
 \par Dezvoltarea unui sistem de management al workflow-urilor de lunga durată într-un mediu distribuit este o problemă cu foarte multe cazuri speciale, mai ales în zona durabilităţii sistemului si garanţiilor de execuţie pe care acesta le oferă. 
-\par Observând caracterul repetabil al acestor cazuri speciale, în piaţa au aparut diverse framework-uri care rezolvă în mod generic aceste probleme şi expun interfeţe uşor de consumat, printre care cel mai matur fiind DurableTaskFramework. Folosind această tehnologie, a fost dezvoltat un serviciu demonstrativ, ce rezolvă problema rezervării unei excursii şi care expune o metodă interactivă de a vizualiza managementul unei tranzacţii distribuite. Aplicaţia este disponibila în mod public la \emph{https://durable-saga-front-end.web.app/}. 
+\par Observând caracterul repetabil al acestor cazuri speciale, în piaţa au aparut diverse framework-uri care rezolvă în mod generic aceste probleme şi expun interfeţe uşor de consumat, printre care cel mai matur fiind DurableTaskFramework. Folosind această tehnologie, a fost dezvoltat un serviciu demonstrativ, ce rezolvă problema rezervării unei excursii şi care expune o metodă interactivă de a vizualiza managementul unei tranzacţii distribuite. Aplicaţia este disponibilă în mod public la \emph{https://durable-saga-front-end.web.app/}. 
 \par Primitivele expuse de Durable Functions au înjumătăţit timpul de dezvoltare a soluţiei şi au generat un serviciu cu costuri aproape de 0, deoarece sistemul este în totalite serverless. 
-\par Pe viitor vor fi abordate eventuale îmbunătăţiri ale DTF în zonele în care au fost descoperite vulnerabilităţi în cadrul acestei lucrări respectiv în adăugarea suportului pentru throttling in DTF.
+\par Pe viitor vor fi abordate eventuale îmbunătăţiri ale DTF în zonele în care au fost descoperite vulnerabilităţi în cadrul acestei lucrări respectiv în adăugarea suportului pentru throttling în DTF.
 
-\bibliographystyle{plain}
+\bibliographystyle{abbrv}
 \listoffigures
-\bibliography{./References}
+\bibliography{\jobname}
 \end{document}
