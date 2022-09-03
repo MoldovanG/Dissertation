@@ -4,13 +4,13 @@
 \babel@toc {english}{}
 \babel@toc {romanian}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Statistică ce evidenţiază importanţa domeniului cloud computing în ultimii ani\relax }}{4}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Statistică ce evidenţiază importanţa domeniului cloud computing în ultimii ani\relax }}{5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Orchestrare versus Coreografie\relax }}{9}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces DTF Schema în DTF Sql Server provider\relax }}{10}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplu arhitectură folosind Durable Functions\relax }}{12}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Ciclu de versionarea a codului de orchestrare\relax }}{13}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Orchestrare versus Coreografie\relax }}{10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces DTF Schema în DTF Sql Server provider\relax }}{11}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Exemplu arhitectură folosind Durable Functions\relax }}{13}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Ciclu de versionare a codului de orchestrare\relax }}{14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Rezervare distribuită folosind Durable Functions\relax }}{23}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Scalare automată a workerilor DTF\relax }}{28}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Rezervare distribuită folosind Durable Functions\relax }}{29}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Scalare automată a workerilor DTF\relax }}{30}%
 \addvspace {10\p@ }

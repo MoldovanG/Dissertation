@@ -3,30 +3,30 @@
 \babel@toc {romanian}{}
 \babel@toc {english}{}
 \babel@toc {romanian}{}
-\contentsline {chapter}{\numberline {1}Introducere}{3}%
-\contentsline {section}{\numberline {1.1}Motivatie}{3}%
-\contentsline {section}{\numberline {1.2}Context}{4}%
-\contentsline {section}{\numberline {1.3}Alte analize ale problemelor curente a arhitecturii Serverless}{5}%
-\contentsline {section}{\numberline {1.4}Conţinutul lucrării}{6}%
-\contentsline {chapter}{\numberline {2}Analiza Tehnologiei Durable Task Framework si a providerilor disponibili}{7}%
-\contentsline {section}{\numberline {2.1}Analiză generală}{7}%
-\contentsline {section}{\numberline {2.2}Folosirea evenimentelor în DTF}{8}%
-\contentsline {section}{\numberline {2.3}DTF în Durable Functions}{11}%
-\contentsline {section}{\numberline {2.4}Greutăţi în gestionarea workflow-urilor de lunga durată - Versionarea Orchestrarilor }{12}%
-\contentsline {chapter}{\numberline {3}Workflow-uri de lungă durata - Analiză paralelă a arhitecturii}{14}%
-\contentsline {section}{\numberline {3.1}Descrierea problemei}{14}%
-\contentsline {section}{\numberline {3.2}Implementarea arhitecturii în mod clasic}{15}%
-\contentsline {subsection}{\numberline {3.2.1}Implementarea naivă}{15}%
-\contentsline {subsection}{\numberline {3.2.2}Execuţie durabilă}{16}%
-\contentsline {subsection}{\numberline {3.2.3}Garanţii de execuţie. Cel puţin odată versus exact o dată}{17}%
-\contentsline {subsection}{\numberline {3.2.4}Interacţiunea din exterior cu workflow-ul. Operaţii de lungă durată}{18}%
-\contentsline {subsection}{\numberline {3.2.5}Cronometre durabile.}{19}%
-\contentsline {subsection}{\numberline {3.2.6}Optimizarea numarului de request-uri}{19}%
-\contentsline {subsection}{\numberline {3.2.7}Considerente de deployment şi scalabilitate}{20}%
-\contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind durable Functions}{21}%
-\contentsline {subsection}{\numberline {3.3.1}Noua Arhitectură}{23}%
+\contentsline {chapter}{\numberline {1}Introducere}{4}%
+\contentsline {section}{\numberline {1.1}Motivaţie}{4}%
+\contentsline {section}{\numberline {1.2}Context}{5}%
+\contentsline {section}{\numberline {1.3}Alte analize ale problemelor curente a arhitecturii Serverless}{6}%
+\contentsline {section}{\numberline {1.4}Conţinutul lucrării}{7}%
+\contentsline {chapter}{\numberline {2}Analiza Tehnologiei Durable Task Framework }{8}%
+\contentsline {section}{\numberline {2.1}Analiză generală}{8}%
+\contentsline {section}{\numberline {2.2}Folosirea evenimentelor în DTF}{9}%
+\contentsline {section}{\numberline {2.3}DTF în Durable Functions}{12}%
+\contentsline {section}{\numberline {2.4}Dificultăţi în gestionarea workflow-urilor de lungă durată - Versionarea Orchestrărilor }{13}%
+\contentsline {chapter}{\numberline {3}Workflow-uri de lungă durată - Analiză paralelă a arhitecturii}{15}%
+\contentsline {section}{\numberline {3.1}Descrierea problemei}{15}%
+\contentsline {section}{\numberline {3.2}Implementarea arhitecturii în mod clasic}{16}%
+\contentsline {subsection}{\numberline {3.2.1}Implementarea naivă}{16}%
+\contentsline {subsection}{\numberline {3.2.2}Execuţie durabilă}{17}%
+\contentsline {subsection}{\numberline {3.2.3}Garanţii de execuţie. Cel puţin o dată versus exact o dată}{18}%
+\contentsline {subsection}{\numberline {3.2.4}Interacţiunea din exterior cu workflow-ul. Operaţii de lungă durată}{19}%
+\contentsline {subsection}{\numberline {3.2.5}Cronometre durabile}{20}%
+\contentsline {subsection}{\numberline {3.2.6}Optimizarea numărului de request-uri}{20}%
+\contentsline {subsection}{\numberline {3.2.7}Considerente de deployment şi scalabilitate}{21}%
+\contentsline {section}{\numberline {3.3}Implementarea arhitecturii folosind \\ Durable Functions}{22}%
+\contentsline {subsection}{\numberline {3.3.1}Noua Arhitectură}{24}%
 \contentsline {subsection}{\numberline {3.3.2}Cronometre Durabile în Durable Functions}{26}%
 \contentsline {subsection}{\numberline {3.3.3}Considerente de deployment şi scalabilitate}{27}%
-\contentsline {subsection}{\numberline {3.3.4}Arhitectura non-serverless pentru execuţia durabila a workflow-urilor}{27}%
-\contentsline {chapter}{\numberline {4}Rezultate şi Concluzii}{30}%
-\contentsline {section}{\numberline {4.1}Concluzii}{30}%
+\contentsline {subsection}{\numberline {3.3.4}Arhitectura non-serverless pentru execuţia durabilă a workflow-urilor}{28}%
+\contentsline {chapter}{\numberline {4}Rezultate şi concluzii}{31}%
+\contentsline {section}{Bibliografie}{32}%
